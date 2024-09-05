@@ -34,7 +34,7 @@
 
         header {
             background-color: var(--secondary-color);
-            padding: 20px 0;
+            padding: 10px 0; /* Reduced padding */
             position: fixed;
             width: 100%;
             top: 0;
@@ -46,17 +46,20 @@
             display: flex;
             justify-content: center;
             list-style-type: none;
+            flex-wrap: wrap;
+            padding: 0 20px;
         }
 
         nav ul li {
-            margin: 0 15px;
+            margin: 0 10px;
         }
 
         nav ul li a {
             color: var(--text-color);
             text-decoration: none;
             font-weight: bold;
-            padding: 10px 15px;
+            font-size: 0.9rem; /* Reduced font size */
+            padding: 5px 10px; /* Reduced padding */
             transition: all 0.3s ease;
             border-radius: 5px;
         }
@@ -67,7 +70,7 @@
         }
 
         main {
-            padding-top: 100px;
+            padding-top: 70px; /* Adjusted for smaller header */
             display: flex;
             justify-content: space-between;
             flex-wrap: wrap;
@@ -318,10 +321,10 @@
                     <h4>Python</h4>
                 </div>
                 <div class="skill">
-                    <h4>OpenCV</h4>
+                    <h4>Computer Vision</h4>
                 </div>
                 <div class="skill">
-                    <h4>TensorFlow</h4>
+                    <h4>Deep Learning</h4>
                 </div>
                 <div class="skill">
                     <h4>PyTorch</h4>
