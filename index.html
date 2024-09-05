@@ -23,6 +23,7 @@
             background-color: var(--bg-color);
             color: var(--text-color);
             line-height: 1.6;
+            overflow-x: hidden;
         }
 
         .container {
@@ -38,6 +39,7 @@
             width: 100%;
             top: 0;
             z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
         }
 
         nav ul {
@@ -54,11 +56,14 @@
             color: var(--text-color);
             text-decoration: none;
             font-weight: bold;
-            transition: color 0.3s ease;
+            padding: 10px 15px;
+            transition: all 0.3s ease;
+            border-radius: 5px;
         }
 
         nav ul li a:hover {
             color: var(--accent-color);
+            background-color: var(--bg-color);
         }
 
         main {
@@ -76,21 +81,66 @@
             margin: 10px;
             border-radius: 10px;
             text-align: center;
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s forwards;
         }
 
-        section:hover {
-            transform: translateY(-5px);
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        section:nth-child(1) {
+            animation-delay: 0.2s;
+        }
+
+        section:nth-child(2) {
+            animation-delay: 0.4s;
+        }
+
+        section:nth-child(3) {
+            animation-delay: 0.6s;
+        }
+
+        section:nth-child(4) {
+            animation-delay: 0.8s;
         }
 
         h1, h2 {
             margin-bottom: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        h1::after, h2::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: var(--accent-color);
+            transition: width 0.4s;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+
+        h1:hover::after, h2:hover::after {
+            width: 100%;
         }
 
         #home img {
             border-radius: 50%;
             max-width: 150px;
             margin-bottom: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        #home img:hover {
+            transform: scale(1.1);
         }
 
         .projects, .articles {
@@ -100,14 +150,16 @@
         }
 
         .project, .article {
-            background-color: var(--secondary-color);
+            background-color: var(--bg-color);
             border-radius: 10px;
             padding: 20px;
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
         }
 
         .project:hover, .article:hover {
-            transform: translateY(-5px);
+            transform: translateY(-10px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
         }
 
         .project-links, .article-link {
@@ -118,15 +170,20 @@
             color: var(--accent-color);
             text-decoration: none;
             margin-right: 10px;
+            transition: color 0.3s ease;
         }
 
         .project-links a:hover, .article-link a:hover {
-            text-decoration: underline;
+            color: var(--text-color);
+            background-color: var(--accent-color);
+            padding: 5px 10px;
+            border-radius: 5px;
         }
 
         #skills {
             flex-basis: 100%;
             margin-top: 20px;
+            animation-delay: 1s;
         }
 
         .skills {
@@ -143,6 +200,11 @@
         .skill h4 {
             margin-bottom: 10px;
             font-size: 1.2em;
+            transition: color 0.3s ease;
+        }
+
+        .skill:hover h4 {
+            color: var(--accent-color);
         }
 
         .contact-links {
@@ -156,10 +218,12 @@
             color: var(--accent-color);
             text-decoration: none;
             font-size: 1.2em;
+            transition: all 0.3s ease;
         }
 
         .contact-links a:hover {
             text-decoration: underline;
+            color: var(--text-color);
         }
 
         footer {
@@ -262,29 +326,21 @@
                 <div class="skill">
                     <h4>PyTorch</h4>
                 </div>
-                <div class="skill">
-                    <h4>Machine Learning</h4>
-                </div>
-                <div class="skill">
-                    <h4>Deep Learning</h4>
-                </div>
             </div>
         </section>
 
         <section id="contact">
-            <h2>Contact Me</h2>
+            <h2>Contact</h2>
             <div class="contact-links">
-                <a href="mailto:your.email@example.com">Email</a>
-                <a href="https://github.com/yourusername" target="_blank">GitHub</a>
-                <a href="https://www.linkedin.com/in/yourusername" target="_blank">LinkedIn</a>
+                <a href="mailto:your-email@example.com">Email</a>
+                <a href="https://www.linkedin.com/in/your-linkedin/" target="_blank">LinkedIn</a>
+                <a href="https://github.com/your-github" target="_blank">GitHub</a>
             </div>
         </section>
     </main>
 
     <footer>
-        <div class="container">
-            <p>&copy; 2024 Your Name. All rights reserved.</p>
-        </div>
+        <p>&copy; 2024 Your Name</p>
     </footer>
 </body>
 </html>
