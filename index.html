@@ -72,16 +72,16 @@
         main {
             padding-top: 70px; /* Adjusted for smaller header */
             display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
+            flex-direction: column;
+            align-items: center;
         }
 
         section {
-            flex: 1;
+            width: 100%;
+            max-width: 1200px;
             padding: 20px;
-            min-width: 300px;
             background-color: var(--secondary-color);
-            margin: 10px;
+            margin: 10px 0;
             border-radius: 10px;
             text-align: center;
             transition: transform 0.3s ease, opacity 0.3s ease;
@@ -111,6 +111,10 @@
 
         section:nth-child(4) {
             animation-delay: 0.8s;
+        }
+
+        section:nth-child(5) {
+            animation-delay: 1s;
         }
 
         h1, h2 {
@@ -184,7 +188,6 @@
         }
 
         #skills {
-            flex-basis: 100%;
             margin-top: 20px;
             animation-delay: 1s;
         }
@@ -257,6 +260,7 @@
         <nav>
             <ul>
                 <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Me</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#articles">Articles</a></li>
                 <li><a href="#skills">Skills</a></li>
@@ -270,6 +274,11 @@
             <h1>Your Name</h1>
             <img src="your-image.jpg" alt="Your Name">
             <p>Computer Vision Developer</p>
+        </section>
+
+        <section id="about">
+            <h2>About Me</h2>
+            <p>Hello! I am a passionate computer vision developer with a strong background in creating innovative AI solutions. I specialize in developing algorithms for image and video analysis, and I'm committed to using technology to solve real-world problems. My experience spans various projects including license plate recognition, image classification, and more.</p>
         </section>
 
         <section id="projects">
