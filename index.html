@@ -61,22 +61,45 @@
             color: var(--accent-color);
         }
 
+        main {
+            padding-top: 100px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
         section {
-            padding: 100px 0;
+            flex: 1;
+            padding: 20px;
+            min-width: 300px;
+            background-color: var(--secondary-color);
+            margin: 10px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        section:hover {
+            transform: translateY(-5px);
         }
 
         h1, h2 {
-            text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
+        }
+
+        #home img {
+            border-radius: 50%;
+            max-width: 150px;
+            margin-bottom: 20px;
         }
 
         .projects, .articles {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
         }
 
-        .project, .article, .skill {
+        .project, .article {
             background-color: var(--secondary-color);
             border-radius: 10px;
             padding: 20px;
@@ -85,10 +108,6 @@
 
         .project:hover, .article:hover {
             transform: translateY(-5px);
-        }
-
-        .project h3, .article h3 {
-            margin-bottom: 10px;
         }
 
         .project-links, .article-link {
@@ -105,32 +124,32 @@
             text-decoration: underline;
         }
 
+        #skills {
+            flex-basis: 100%;
+            margin-top: 20px;
+        }
+
         .skills {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .skill {
+            margin: 10px;
+            text-align: center;
         }
 
         .skill h4 {
             margin-bottom: 10px;
-        }
-
-        .skill-bar {
-            height: 10px;
-            background-color: var(--bg-color);
-            border-radius: 5px;
-            overflow: hidden;
-        }
-
-        .skill-level {
-            height: 100%;
-            background-color: var(--accent-color);
+            font-size: 1.2em;
         }
 
         .contact-links {
             display: flex;
             justify-content: center;
             gap: 20px;
+            margin-top: 30px;
         }
 
         .contact-links a {
@@ -147,9 +166,14 @@
             text-align: center;
             padding: 20px 0;
             background-color: var(--secondary-color);
+            margin-top: 20px;
         }
 
         @media (max-width: 768px) {
+            main {
+                flex-direction: column;
+            }
+
             nav ul {
                 flex-direction: column;
                 align-items: center;
@@ -166,10 +190,9 @@
         <nav>
             <ul>
                 <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#articles">Articles</a></li>
+                <li><a href="#skills">Skills</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -177,121 +200,83 @@
 
     <main>
         <section id="home">
-            <div class="container">
-                <h1>Your Name</h1>
-                <p>Computer Vision Developer</p>
-            </div>
-        </section>
-
-        <section id="about">
-            <div class="container">
-                <h2>About Me</h2>
-                <p>
-                    Write your bio here. Discuss your background, experience, and passion for computer vision. 
-                    Mention any significant achievements or projects you've worked on. This is your chance to 
-                    tell your story and make a connection with potential employers or collaborators.
-                </p>
-            </div>
-        </section>
-
-        <section id="skills">
-            <div class="container">
-                <h2>Skills</h2>
-                <div class="skills">
-                    <div class="skill">
-                        <h4>Python</h4>
-                        <div class="skill-bar">
-                            <div class="skill-level" style="width: 90%;"></div>
-                        </div>
-                    </div>
-                    <div class="skill">
-                        <h4>OpenCV</h4>
-                        <div class="skill-bar">
-                            <div class="skill-level" style="width: 85%;"></div>
-                        </div>
-                    </div>
-                    <div class="skill">
-                        <h4>TensorFlow</h4>
-                        <div class="skill-bar">
-                            <div class="skill-level" style="width: 80%;"></div>
-                        </div>
-                    </div>
-                    <div class="skill">
-                        <h4>PyTorch</h4>
-                        <div class="skill-bar">
-                            <div class="skill-level" style="width: 75%;"></div>
-                        </div>
-                    </div>
-                    <div class="skill">
-                        <h4>Machine Learning</h4>
-                        <div class="skill-bar">
-                            <div class="skill-level" style="width: 85%;"></div>
-                        </div>
-                    </div>
-                    <div class="skill">
-                        <h4>Deep Learning</h4>
-                        <div class="skill-bar">
-                            <div class="skill-level" style="width: 80%;"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <h1>Your Name</h1>
+            <img src="your-image.jpg" alt="Your Name">
+            <p>Computer Vision Developer</p>
         </section>
 
         <section id="projects">
-            <div class="container">
-                <h2>Projects</h2>
-                <div class="projects">
-                    <div class="project">
-                        <h3>Project 1</h3>
-                        <p>Description of Project 1</p>
-                        <div class="project-links">
-                            <a href="#" target="_blank">YouTube</a>
-                            <a href="#" target="_blank">GitHub</a>
-                        </div>
+            <h2>Projects</h2>
+            <div class="projects">
+                <div class="project">
+                    <h3>Project 1</h3>
+                    <p>Description of Project 1</p>
+                    <div class="project-links">
+                        <a href="#" target="_blank">YouTube</a>
+                        <a href="#" target="_blank">GitHub</a>
                     </div>
-                    <div class="project">
-                        <h3>Project 2</h3>
-                        <p>Description of Project 2</p>
-                        <div class="project-links">
-                            <a href="#" target="_blank">YouTube</a>
-                            <a href="#" target="_blank">GitHub</a>
-                        </div>
+                </div>
+                <div class="project">
+                    <h3>Project 2</h3>
+                    <p>Description of Project 2</p>
+                    <div class="project-links">
+                        <a href="#" target="_blank">YouTube</a>
+                        <a href="#" target="_blank">GitHub</a>
                     </div>
                 </div>
             </div>
         </section>
 
         <section id="articles">
-            <div class="container">
-                <h2>Articles</h2>
-                <div class="articles">
-                    <div class="article">
-                        <h3>Article 1</h3>
-                        <p>Description of Article 1</p>
-                        <div class="article-link">
-                            <a href="#" target="_blank">Read on Medium</a>
-                        </div>
+            <h2>Articles</h2>
+            <div class="articles">
+                <div class="article">
+                    <h3>Article 1</h3>
+                    <p>Description of Article 1</p>
+                    <div class="article-link">
+                        <a href="#" target="_blank">Read on Medium</a>
                     </div>
-                    <div class="article">
-                        <h3>Article 2</h3>
-                        <p>Description of Article 2</p>
-                        <div class="article-link">
-                            <a href="#" target="_blank">Read on Medium</a>
-                        </div>
+                </div>
+                <div class="article">
+                    <h3>Article 2</h3>
+                    <p>Description of Article 2</p>
+                    <div class="article-link">
+                        <a href="#" target="_blank">Read on Medium</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="contact">
-            <div class="container">
-                <h2>Contact Me</h2>
-                <div class="contact-links">
-                    <a href="mailto:your.email@example.com">Email</a>
-                    <a href="https://github.com/yourusername" target="_blank">GitHub</a>
-                    <a href="https://www.linkedin.com/in/yourusername" target="_blank">LinkedIn</a>
+        <section id="skills">
+            <h2>Skills</h2>
+            <div class="skills">
+                <div class="skill">
+                    <h4>Python</h4>
                 </div>
+                <div class="skill">
+                    <h4>OpenCV</h4>
+                </div>
+                <div class="skill">
+                    <h4>TensorFlow</h4>
+                </div>
+                <div class="skill">
+                    <h4>PyTorch</h4>
+                </div>
+                <div class="skill">
+                    <h4>Machine Learning</h4>
+                </div>
+                <div class="skill">
+                    <h4>Deep Learning</h4>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <div class="contact-links">
+                <a href="mailto:your.email@example.com">Email</a>
+                <a href="https://github.com/yourusername" target="_blank">GitHub</a>
+                <a href="https://www.linkedin.com/in/yourusername" target="_blank">LinkedIn</a>
             </div>
         </section>
     </main>
@@ -303,6 +288,3 @@
     </footer>
 </body>
 </html>
-```
-
-Replace the placeholders like "Your Name," "Your bio here," and the skill levels as needed to personalize the template. This code is structured and ready to be pasted directly into your HTML file.
