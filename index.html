@@ -134,13 +134,13 @@
             width: 100%;
         }
 
-        .projects, .articles {
+        .projects, .articles, .publications {
             display: flex;
             flex-direction: column;
             gap: 20px;
         }
 
-        .project, .article {
+        .project, .article, .publication {
             background-color: var(--accent-light);
             border: 1px solid var(--border-color);
             border-radius: 10px;
@@ -149,16 +149,16 @@
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
 
-        .project:hover, .article:hover {
+        .project:hover, .article:hover, .publication:hover {
             transform: translateY(-10px);
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
         }
 
-        .project-links, .article-link {
+        .project-links, .article-link, .publication-link {
             margin-top: 15px;
         }
 
-        .project-links a, .article-link a {
+        .project-links a, .article-link a, .publication-link a {
             color: var(--secondary-color);
             text-decoration: none;
             font-size: 1rem;
@@ -169,7 +169,7 @@
             transition: background-color 0.3s ease, color 0.3s ease;
         }
 
-        .project-links a:hover, .article-link a:hover {
+        .project-links a:hover, .article-link a:hover, .publication-link a:hover {
             color: #ffffff;
             background-color: var(--secondary-color);
         }
@@ -247,6 +247,7 @@
                 <li><a href="#about">About Me</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#articles">Articles</a></li>
+                <li><a href="#publications">Publications</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -292,83 +293,58 @@
             <h2>Articles</h2>
             <div class="articles">
                 <div class="article">
-                    <h3>Path to Artificial General Intelligence (AGI) 2</h3>
-                    <p>Challenging the term 'Artificial General Intelligence,' favoring 'Human-Level Intelligence.' It outlines essential cognitive traits needed for true machine intelligence: learning, memory, reasoning, and planning. It emphasizes the gradual, collaborative journey required to reach AGI.</p>
+                    <h3>Understanding AI in Computer Vision</h3>
+                    <p>A deep dive into the current trends in AI and how they are revolutionizing computer vision.</p>
                     <div class="article-link">
-                        <a href="https://medium.com/@ismailismailtj/path-to-artificial-general-intelligence-agi-2-6c5051af0baf" target="_blank">Read More</a>
-                    </div>
-                </div>
-                <div class="article">
-                    <h3>How Students Will Use ChatGPT Effectively</h3>
-                    <p>Explores how students can use ChatGPT wisely for learning, emphasizing summarization and idea support while highlighting the importance of fact-checking and academic integrity.</p>
-                    <div class="article-link">
-                        <a href="https://medium.com/@ismailismailtj/how-students-will-use-chatgpt-effectively-1d7f57d7e722" target="_blank">Read More</a>
-                    </div>
-                </div>
-                <div class="article">
-                    <h3>Understanding How ChatGPT Works and Addressing Raised Concerns</h3>
-                    <p>A breakdown of ChatGPT’s functionality and a response to common questions and concerns.</p>
-                    <div class="article-link">
-                        <a href="https://medium.com/@ismailismailtj/understanding-how-chatgpt-works-and-addressing-raised-concerns-09f7835d17c0" target="_blank">Read More</a>
-                    </div>
-                </div>
-                <div class="article">
-                    <h3>Path to Artificial General Intelligence (AGI 1)</h3>
-                    <p>The steps and considerations in the journey toward achieving AGI.</p>
-                    <div class="article-link">
-                        <a href="https://medium.com/@ismailismailtj/path-to-artificial-general-intelligence-agi-1-c07208b13020" target="_blank">Read More</a>
-                    </div>
-                </div>
-                <div class="article">
-                    <h3>AI and Future of Jobs</h3>
-                    <p>An analysis of how AI will impact job roles and the workforce in the future.</p>
-                    <div class="article-link">
-                        <a href="https://medium.com/@ismailismailtj/ai-and-future-of-jobs-a831e9bdc494" target="_blank">Read More</a>
-                    </div>
-                </div>
-                <div class="article">
-                    <h3>AI is Here for Good</h3>
-                    <p>A look at the positive impacts of AI and how it can contribute to societal progress.</p>
-                    <div class="article-link">
-                        <a href="https://medium.com/@ismailismailtj/ai-is-here-for-good-bcdb47d6cebe" target="_blank">Read More</a>
+                        <a href="#" target="_blank">Read More</a>
                     </div>
                 </div>
             </div>
         </section>
 
+        <section id="publications">
+            <h2>Publications</h2>
+            <div class="publications">
+                <div class="publication">
+                    <h3>AI Approaches to Image Classification</h3>
+                    <p>My research paper on the latest advancements in CNN and AI for image classification tasks, particularly in the Nigerian context.</p>
+                    <div class="publication-link">
+                        <a href="#" target="_blank">Read Paper</a>
+                    </div>
+                </div>
+                <div class="publication">
+                    <h3>Exploring Deep Learning for Fraud Detection</h3>
+                    <p>Exploring how deep learning techniques are being used to detect fraudulent transactions in financial systems.</p>
+                    <div class="publication-link">
+                        <a href="#" target="_blank">Read Paper</a>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <section id="skills">
             <h2>Skills</h2>
             <div class="skills">
                 <div class="skill">Python</div>
-                <div class="skill">TensorFlow</div>
-                <div class="skill">Pytorch</div>
-                <div class="skill">OpenCV</div>
-                <div class="skill">AI & Machine Learning</div>
-                <div class="skill">Deep Learning</div>
                 <div class="skill">Computer Vision</div>
-                <div class="skill">Data Collection</div>
-                <div class="skill">Project Management</div>
-                <div class="skill">Mentorship & Training</div>
-                <div class="skill">Research</div>
-                <div class="skill">Open Source Contribution</div>
+                <div class="skill">Deep Learning</div>
+                <div class="skill">Machine Learning</div>
+                <div class="skill">AI Research</div>
+                <div class="skill">TensorFlow</div>
             </div>
         </section>
 
         <section id="contact">
             <h2>Contact</h2>
-            <p>Connect with me on social media or send an email for collaborations or inquiries.</p>
             <div class="contact-links">
-                <a href="mailto:ismailismailtj@gmail.com" target="_blank">Gmail</a>
-                <a href="https://www.linkedin.com/in/ismail-tijjani-31a41b1aa" target="_blank">LinkedIn</a>
-                <a href="https://www.x.com/esssyjr" target="_blank">X</a>
-                <a href="https://www.github.com/esssyjr" target="_blank">GitHub</a>
+                <a href="https://www.linkedin.com/in/ismailtijjani" target="_blank">LinkedIn</a>
+                <a href="mailto:ismail@ejaztech.ai">Email</a>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2024 Ismail Ismail Tijjani. All Rights Reserved.</p>
+        <p>&copy; 2024 Ismail Ismail Tijjani</p>
     </footer>
 </body>
 </html>
