@@ -1,502 +1,338 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ismail Ismail Tijjani - Founder and President of EJAZTECH.AI - AI Researcher - Computer Vision Developer</title>
-    <style>
-        :root {
-            --bg-color: #f0f7ff; /* Light blue background */
-            --primary-color: #1e3a8a; /* Dark blue for headers */
-            --secondary-color: #2563eb; /* Mid-blue for accents */
-            --text-color: #0f172a; /* Almost black text color */
-            --border-color: #e2e8f0; /* Light gray for borders */
-            --accent-light: #93c5fd; /* Light accent blue */
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ismail Ismail Tijjani - AI Researcher</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #2563eb;
+      --bg: #0a192f;
+      --card-bg: #fff;
+      --accent: #eab308;
+      --text: #e2e8f0;
+      --muted: #6b7280;
+    }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    body {
+      font-family: 'Montserrat', 'Roboto', Arial, sans-serif;
+      background: linear-gradient(120deg, var(--bg) 70%, var(--primary) 100%);
+      color: var(--text);
+      margin: 0;
+      padding: 0;
+    }
 
-        body {
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.7;
-            overflow-x: hidden;
-        }
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: auto;
+      padding: 32px;
+    }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
+    header {
+      position: sticky;
+      top: 0;
+      width: 100%;
+      background: rgba(10, 25, 47, 0.9);
+      z-index: 999;
+      box-shadow: 0 2px 8px #1e293b50;
+    }
 
-        header {
-            background-color: var(--bg-color);
-            padding: 15px 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            border-bottom: 1px solid var(--border-color);
-        }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 0;
+    }
 
-        nav ul {
-            display: flex;
-            justify-content: center;
-            list-style-type: none;
-            flex-wrap: wrap;
-            padding: 0;
-        }
+    .nav-links {
+      display: flex;
+      gap: 30px;
+    }
 
-        nav ul li {
-            margin: 0 15px;
-        }
+    .nav-links a {
+      color: var(--accent);
+      font-weight: 700;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
 
-        nav ul li a {
-            color: var(--primary-color);
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 0.9rem;
-            padding: 8px 15px;
-            transition: color 0.3s ease, background-color 0.3s ease;
-            border-radius: 5px;
-        }
+    .nav-links a:hover {
+      color: var(--primary);
+    }
 
-        nav ul li a:hover {
-            color: var(--bg-color);
-            background-color: var(--secondary-color);
-        }
+    .hero {
+      text-align: center;
+      padding: 90px 0 40px;
+      animation: fadeIn 1.5s both;
+    }
 
-        main {
-            padding-top: 80px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 18px;
+      color: var(--accent);
+      text-shadow: 1px 1px 7px var(--bg);
+    }
 
-        section {
-            width: 100%;
-            max-width: 1000px;
-            padding: 30px;
-            margin: 20px 0;
-            border: 1px solid var(--border-color);
-            border-radius: 10px;
-            background-color: #ffffff;
-            text-align: center;
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeInUp 1s forwards;
-        }
+    .hero p {
+      font-size: 1.3rem;
+      margin-bottom: 8px;
+      color: var(--text);
+      opacity: 0.95;
+    }
 
-        @keyframes fadeInUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+    .hero img {
+      border-radius: 50%;
+      width: 120px;
+      height: 120px;
+      box-shadow: 0 6px 24px var(--primary);
+      margin-bottom: 22px;
+      object-fit: cover;
+    }
 
-        h1, h2 {
-            margin-bottom: 20px;
-            position: relative;
-            font-weight: 300;
-            letter-spacing: 1.2px;
-            color: var(--primary-color);
-        }
+    main section {
+      margin-top: 48px;
+      border-radius: 14px;
+      box-shadow: 0 8px 32px #1e293b36;
+      background: var(--card-bg);
+      color: #111;
+      padding: 42px 24px;
+      animation: fadeInUp 1.2s both;
+    }
 
-        h1 {
-            font-size: 2.5rem;
-            text-transform: uppercase;
-        }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(60px);}
+      to { opacity: 1; transform: translateY(0);}
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
 
-        h2 {
-            font-size: 1.8rem;
-            color: var(--secondary-color);
-        }
+    h2 {
+      color: var(--primary);
+      margin-bottom: 18px;
+      font-size: 2rem;
+      letter-spacing: 1.2px;
+      border-bottom: 2px solid var(--accent);
+      display: inline-block;
+      padding-bottom: 8px;
+    }
 
-        h1::after, h2::after {
-            content: '';
-            display: block;
-            width: 0;
-            height: 2px;
-            background: var(--secondary-color);
-            transition: width 0.4s;
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-        }
+    /* Project cards */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 32px;
+    }
 
-        h1:hover::after, h2:hover::after {
-            width: 100%;
-        }
+    .project-card {
+      background: linear-gradient(120deg, #f3f4f6 80%, #dbeafe 100%);
+      border-radius: 12px;
+      box-shadow: 0 4px 16px #1e293b10;
+      padding: 28px 18px;
+      position: relative;
+      transition: transform 0.22s, box-shadow 0.22s;
+      overflow: hidden;
+    }
+    .project-card:hover {
+      transform: translateY(-8px) scale(1.03);
+      box-shadow: 0 16px 34px #2563eb55;
+    }
 
-        .projects, .articles, .publications {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
+    .project-card h3 {
+      margin-bottom: 8px;
+      color: var(--primary);
+    }
+    .project-card p {
+      font-size: 1rem;
+      color: #374151;
+      margin-bottom: 12px;
+    }
+    .project-links {
+      margin-top: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .project-links a {
+      background: var(--primary);
+      color: #fff;
+      font-size: 0.92rem;
+      padding: 7px 18px;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: background 0.23s;
+      font-weight: 500;
+      box-shadow: 0 1px 7px var(--primary);
+    }
+    .project-links a:hover {
+      background: var(--accent);
+      color: #111;
+    }
 
-        .project, .article, .publications {
-            background-color: var(--accent-light);
-            border: 1px solid var(--border-color);
-            border-radius: 10px;
-            padding: 20px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        }
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 12px;
+      justify-content: center;
+    }
+    .skill {
+      background: #e0e7ff;
+      color: var(--primary);
+      border-radius: 7px;
+      padding: 8px 18px;
+      font-weight: 700;
+      font-size: 1.07em;
+      transition: background 0.21s, color 0.21s;
+      box-shadow: 0 2px 10px #2563eb10;
+    }
+    .skill:hover {
+      background: var(--primary);
+      color: #fff;
+    }
 
-        .project:hover, .article:hover, .publication:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-        }
+    .contact-links {
+      display: flex;
+      gap: 20px;
+      margin-top: 20px;
+      justify-content: center;
+    }
 
-        .project-links, .article-link {
-            margin-top: 15px;
-        }
+    .contact-links a {
+      color: var(--primary);
+      font-size: 1.35em;
+      text-decoration: none;
+      font-weight: 700;
+      transition: color 0.22s;
+    }
+    .contact-links a:hover {
+      color: var(--accent);
+      text-decoration: underline;
+    }
 
-        .project-links a, .article-link a {
-            color: var(--secondary-color);
-            text-decoration: none;
-            font-size: 1rem;
-            margin-right: 10px;
-            padding: 5px 12px;
-            border: 1px solid var(--secondary-color);
-            border-radius: 5px;
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
+    footer {
+      text-align: center;
+      padding: 18px 0;
+      background: var(--primary);
+      color: #fff;
+      margin-top: 40px;
+      border-top: 2px solid var(--accent);
+    }
 
-        .project-links a:hover, .article-link a:hover {
-            color: #ffffff;
-            background-color: var(--secondary-color);
-        }
-
-        #skills {
-            margin-top: 20px;
-            animation-delay: 1s;
-        }
-
-        .skills {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-        }
-
-        .skill {
-            margin: 10px;
-            text-align: center;
-            border: 1px solid var(--secondary-color);
-            padding: 10px 20px;
-            border-radius: 5px;
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
-
-        .skill:hover {
-            color: #ffffff;
-            background-color: var(--secondary-color);
-        }
-
-        .contact-links {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 30px;
-        }
-
-        .contact-links a {
-            color: var(--primary-color);
-            text-decoration: none;
-            font-size: 1.2em;
-            transition: color 0.3s ease;
-        }
-
-        .contact-links a:hover {
-            color: var(--secondary-color);
-            text-decoration: underline;
-        }
-
-        footer {
-            text-align: center;
-            padding: 15px 0;
-            background-color: var(--bg-color);
-            margin-top: 20px;
-            border-top: 1px solid var(--border-color);
-        }
-
-        @media (max-width: 768px) {
-            nav ul {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            nav ul li {
-                margin: 10px 0;
-            }
-        }
-    </style>
+    @media (max-width: 850px){
+      .container { padding: 12px;}
+      .projects-grid { grid-template-columns: 1fr; }
+      .skills-list { flex-direction: column;}
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About Me</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#articles">Articles</a></li>
-                <li><a href="#publications">Publications</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+  <header>
+    <nav class="container">
+      <div>
+        <span style="font-size:1.33em; color:var(--accent); font-weight:700;">Ismail Tijjani</span>
+      </div>
+      <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#articles">Articles</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
 
-    <main>
-        <section id="home">
-            <h1>Ismail Ismail Tijjani</h1>
-            <p>Founder and President of EJAZTECH.AI</p>
-            <p>AI Researcher</p>
-            <p>Computer Vision Developer</p>
-        </section>
+  <main class="container">
+    <section class="hero" id="home">
+      <img src="https://avatars.githubusercontent.com/u/94661428?v=4" alt="Ismail Tijjani Portrait">
+      <h1>Ismail Ismail Tijjani</h1>
+      <p>Founder of EJAZTECH.AI | AI Researcher | Computer Vision Developer</p>
+      <p>Empowering Africa through AI-driven solutions.</p>
+    </section>
 
-        <section id="about">
-            <h2>About Me</h2>
-            <p>A computer vision developer, AI researcher, and a fourth-year Mechatronics Engineering student. As the founder of EJAZTECH.AI, I specialize in developing AI-driven solutions that address local challenges in Nigeria and Africa. I have collaborated with various companies to build tailored AI models for their specific needs. Additionally, I lead a mentorship program through my company, guiding aspiring youths in their AI careers. My mission is to empower individuals to innovate and create transformative technologies for the betterment of Nigeria and the broader African continent.</p>
-        </section>
+    <section id="about">
+      <h2>About Me</h2>
+      <p>I am a computer vision developer, AI researcher, and mechatronics engineering student, leading the AI revolution in Nigeria and Africa. As founder of EJAZTECH.AI, I build tailored AI solutions and mentor young talent, dedicated to technology for social impact.</p>
+    </section>
 
-        <section id="projects">
-            <h2>Projects</h2>
-            
-            <div class="projects">
-                <div class="project">
-                    <h3>Food Vision</h3>
-                    <p>Food Vision is a cutting-edge Nigerian food detection and analysis system that combines Roboflow, Google Gemini AI, Gradio, and Text-to-Speech technologies to provide instant, AI-driven insights on any food image. Simply upload a picture, and get real-time summaries on its health benefits, nutritional value, diabetic suitability, ingredients, and preparation method.</p>
-                    <div class="project-links">
-                        <a href="https://youtu.be/WsCxMQOw78I?si=5SDpxRre045zTSj-" target="_blank">Video Demo</a>
-                        <a href="https://huggingface.co/spaces/esssyjr/FOOD" target="_blank">Website Demo</a>
-                        <a href="https://github.com/esssyjr/Food-Vision" target="_blank">Github Page</a>
-                    </div>
-                </div>
-                <div class="project">
-                    <h3>Halal View</h3>
-                    <p>The Halal View System is an AI-powered content moderation solution designed to automatically detect underdressed individuals in visual media and apply a blur effect to protect viewers from exposure to such content. This innovation is particularly beneficial for ensuring a family-friendly and culturally respectful viewing experience, making it suitable for TV stations, social media platforms, and digital content providers. </p>
-                    <div class="project-links">
-                        <a href="https://youtu.be/_1HlX8Evazo?si=TELF7BqYAT9p9k9j" target="_blank">Video Demo</a>
-                    </div>
-                </div>
-                <div class="project">
-                    <h3>MPOX DETECTION</h3>
-                    <p>THIS REPOSITORY HOSTS THE CODE FOR A DEEP LEARNING-BASED MPOX DETECTION API, DESIGNED TO IDENTIFY MPOX LESIONS IN MEDICAL IMAGES. THIS API IS INTENDED TO SUPPORT HEALTHCARE APPLICATIONS WHERE EFFICIENT AND ACCURATE DETECTION IS ESSENTIAL.</p>
-                    <div class="project-links">
-                        <a href="https://github.com/esssyjr/MPOX_DETECTION" target="_blank">GitHub</a>
-                    </div>
-                </div>
-                <div class="project">
-                    <h3>AGRIAI: Plant Detection and their Health Conditions System</h3>
-                    <p>This project, leverages AI to help farmers and agricultural stakeholders monitor crop health and detect plant. The solution combines plant detection and health condition into a single, user-friendly interface.</p>
-                    <div class="project-links">
-                        <a href="https://github.com/esssyjr/Plant_Detection_and_their_Health_Conditions" target="_blank">GitHub</a>
-                        <a href="https://huggingface.co/spaces/esssyjr/Plant_Detection_and_Their_Health_Condition_FCMB_HACKATHON" target="_blank">Website Demo</a>
-                        <a href="https://drive.google.com/file/d/14aV22Wq9OXHIeZM6AwJSG6rfe1_9zJJq/view?usp=drive_link" target="_blank">Video Demo</a>
-                    </div>
-                </div>
-                <div class="project">
-                    <h3>Nigeria License Plate Detection and Recognition System (NLPDRS)</h3>
-                    <p>The NLPDRS is an advanced AI-driven tool designed to detect and recognize Nigerian license plates from vehicles in various conditions.</p>
-                    <div class="project-links">
-                        <a href="https://github.com/esssyjr/Nigeria-License-Plate-Detection-and-Recognition-System-NLPDRS" target="_blank">GitHub</a>
-                        <a href="https://www.linkedin.com/feed/update/urn:li:activity:7227051054800990210" target="_blank">Video Demo</a>
-                    </div>
-                </div>
-                <div class="project">
-                    <h3>AI-Powered Naira Classification Model</h3>
-                    <p>This model aims to identify the denominations of Nigerian Naira banknotes, including 5, 10, 20, 50, 100, 200, 500, and 1000 Naira notes. Such a model can be seamlessly integrated into various automated systems, including cash deposit machines, currency sorting machines, and more.</p>
-                    <div class="project-links">
-                        <a href="https://github.com/esssyjr/NAIRA_CLASSIFICATION" target="_blank">GitHub</a>
-                        <a href="https://www.linkedin.com/feed/update/urn:li:activity:7207685557924147200/?originTrackingId=sjuhZOhuTW%2BjDscnAWQM7Q%3D%3D" target="_blank">Video Demo</a>
-                    </div>
-                </div>
-                <div class="project">
-                    <h3>KEKE_NAPEP DETECTION AND TRACKING SYSTEM</h3>
-                    <p>The KEKE_NAPEP Detection and Tracking System is an AI-driven solution designed for real-time identification, tracking, and monitoring of tricycles (KEKE_NAPEP) in images and video streams. Given that KEKE_NAPEP serves as a major public transportation mode in Nigeria, this system offers critical insights for traffic management, fleet monitoring, toll gate monitoring, revenue tracking and urban mobility analytics. </p>
-                    <div class="project-links">
-                        <a href="https://github.com/esssyjr/KEKE_NAPEP_DETECTION_AND_TRACKING_SYSTEM" target="_blank">GitHub</a>
-                        <a href="https://youtu.be/sZ4QVAU8XIg?si=vBMNiVAFNJgGR16n" target="_blank">Video Demo 1</a>
-                        <a href="https://youtu.be/UOqrPQgLDT8?si=hdb-toFdPTlIlgwO" target="_blank">Video Demo 2</a>
-                        <a href="https://huggingface.co/spaces/esssyjr/KEKE_NAPEP_DETECTION" target="_blank">Website Demo</a>
-                    </div>
-                </div>
-                <div class="project">
-                    <h3>SPORTS CLASSIFICATION</h3>
-                    <p>This Sports Classifier is a cutting-edge computer vision project that harnesses the power of MobileNet transfer learning to accurately classify images across 100 sports categories.</p>
-                    <div class="project-links">
-                        <a href="https://github.com/esssyjr/SPORTS_CLASSIFICATION" target="_blank">GitHub</a>
-                    </div>
-                </div>
-                <div class="project">
-                    <h3>SURFACE CRACK CLASSIFICATIONS</h3>
-                    <p>This Surface Crack Classifier project is a sophisticated computer vision model designed to address the critical task of classifying surface images into two distinct categories: surfaces with cracks and those without.</p>
-                    <div class="project-links">
-                        <a href="https://github.com/esssyjr/SURFACE_CRACK_CLASSIFICATIONS" target="_blank">GitHub</a>
-                    </div>
-                </div>
-                <div class="project">
-                    <h3>6 PLACES CLASSIFICATION</h3>
-                    <p>This project contains a deep learning model for classifying images into categories such as 'buildings', 'forest', 'glacier', 'mountain', 'sea', and 'street'. </p>
-                    <div class="project-links">
-                        <a href="https://github.com/esssyjr/6-PLACES-CLASSIFICATION" target="_blank">GitHub</a>
-                    </div>
-                </div>
-                <div class="project">
-                    <h3>4 Animals Classification</h3>
-                    <p>This project contains a deep learning model for classifying images of cats, dogs, elephants, and giraffes.</p>
-                    <div class="project-links">
-                        <a href="https://github.com/esssyjr/4-Animals-Classification" target="_blank">GitHub</a>
-                    </div>
-                </div>
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="projects-grid">
+        <!-- Project Card Example -->
+        <div class="project-card">
+          <h3>Food Vision</h3>
+          <p>Nigerian food detection and analysis using Roboflow, Gemini AI, and Gradio for instant insights.</p>
+          <div class="project-links">
+            <a href="https://youtu.be/WsCxMQOw78I?si=5SDpxRre045zTSj-" target="_blank">Video Demo</a>
+            <a href="https://huggingface.co/spaces/esssyjr/FOOD" target="_blank">Website Demo</a>
+            <a href="https://github.com/esssyjr/Food-Vision" target="_blank">GitHub</a>
+          </div>
+        </div>
+        <div class="project-card">
+          <h3>Halal View</h3>
+          <p>AI-powered content moderation for safe, culturally-respectful visual media experiences in Nigeria.</p>
+          <div class="project-links">
+            <a href="https://youtu.be/_1HlX8Evazo?si=TELF7BqYAT9p9k9j" target="_blank">Video Demo</a>
+          </div>
+        </div>
+        <!-- Add other projects similarly, use cards for each -->
+      </div>
+    </section>
 
-                <div class="project">
-                    <h3>Binary Classification Bike Buyer</h3>
-                    <p>This Project demonstrates the classification of bike buyers using various machine learning models. It includes data preprocessing, model implementation (Decision Tree, Logistic Regression, and Neural Network), and evaluation of model accuracies.</p>
-                    <div class="project-links">
-                        <a href="https://github.com/esssyjr/Binary-Classification-Bike-Buyer" target="_blank">GitHub</a>
-                    </div>
-                </div>
-                <div class="project">
-                    <h3>Multi class Classification of Dry Beans</h3>
-                    <p>This project aims to classify different types of dry beans using a Neural Network model trained on the Dry Bean Dataset.</p>
-                    <div class="project-links">
-                        <a href="https://github.com/esssyjr/Multi-class-Classification-of-Dry-Beanss" target="_blank">GitHub</a>
-                    </div>
-                </div>
-                <div class="project">
-                    <h3>DCARS</h3>
-                    <p>Diagnostic Center Automated Reception System</p>
-                    <div class="project-links">
-                        <a href="https://github.com/esssyjr/DCARS" target="_blank">GitHub</a>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <section id="articles">
+      <h2>Articles</h2>
+      <div class="projects-grid">
+        <div class="project-card">
+          <h3>Integrating Gemini, Roboflow, Gradio, and Hugging Face</h3>
+          <p>How to engineer robust AI-powered systems using modern platforms.</p>
+          <div class="project-links">
+            <a href="https://medium.com/@ismailismailtj/integrating-gemini-roboflow-gradio-and-hugging-face-to-build-ai-powered-systems-887f4d91f60b" target="_blank">Read More</a>
+          </div>
+        </div>
+        <div class="project-card">
+          <h3>Building Africa’s AI Future Starts with Data Collection</h3>
+          <p>Why location-specific data is key for effective AI solutions in Africa.</p>
+          <div class="project-links">
+            <a href="https://medium.com/@ismailismailtj/building-africas-ai-future-starts-with-data-collection-a-call-to-action-645d2438aee5" target="_blank">Read More</a>
+          </div>
+        </div>
+        <!-- Add more articles here -->
+      </div>
+    </section>
 
-        <section id="articles">
-            <h2>Articles</h2>
-            <div class="articles">
-                <div class="article">
-                    <h3>Integrating Gemini, Roboflow, Gradio, and Hugging Face to Build AI-Powered Systems</h3>
-                    <p>How to build a system that integrates Google’s Gemini, Roboflow, Gradio, and Hugging Face. I used food vision system that detects foods in images, generates tailored insights, and provides an interactive web interface with audio output.</p>
-                    <div class="article-link">
-                        <a href="https://medium.com/@ismailismailtj/integrating-gemini-roboflow-gradio-and-hugging-face-to-build-ai-powered-systems-887f4d91f60b" target="_blank">Read More</a>
-                    </div>
-                </div>
-                <div class="article">
-                    <h3>Building Africa’s AI Future Starts with Data Collection: A Call to Action</h3>
-                    <p>Africa risks lagging in the AI revolution due to inadequate data collection. AI's effectiveness hinges on quality, location-specific data, yet many African organizations lack digitized records. Importing Western AI solutions is ineffective, as they fail to address African contexts.</p>
-                    <div class="article-link">
-                        <a href="https://medium.com/@ismailismailtj/building-africas-ai-future-starts-with-data-collection-a-call-to-action-645d2438aee5" target="_blank">Read More</a>
-                    </div>
-                </div>
-                <div class="article">
-                    <h3>AI Beyond Coding: A Data-Centric Paradigm</h3>
-                    <p>AI development goes beyond coding, which accounts for ~30% of the process. It involves scoping projects, collecting and preprocessing data, building and evaluating models, testing, and deploying systems with ongoing automation. The focus has shifted to a data-centric approach, prioritizing high-quality, diverse datasets over model tweaking.</p>
-                    <div class="article-link">
-                        <a href="https://medium.com/@ismailismailtj/ai-beyond-coding-a-data-centric-paradigm-7f4577748c5a" target="_blank">Read More</a>
-                    </div>
-                </div>
-                <div class="article">
-                    <h3>Path to Artificial General Intelligence (AGI) 2</h3>
-                    <p>Challenging the term 'Artificial General Intelligence,' favoring 'Human-Level Intelligence.' It outlines essential cognitive traits needed for true machine intelligence: learning, memory, reasoning, and planning. It emphasizes the gradual, collaborative journey required to reach AGI.</p>
-                    <div class="article-link">
-                        <a href="https://medium.com/@ismailismailtj/path-to-artificial-general-intelligence-agi-2-6c5051af0baf" target="_blank">Read More</a>
-                    </div>
-                </div>
-                <div class="article">
-                    <h3>How Students Will Use ChatGPT Effectively</h3>
-                    <p>Explores how students can use ChatGPT wisely for learning, emphasizing summarization and idea support while highlighting the importance of fact-checking and academic integrity.</p>
-                    <div class="article-link">
-                        <a href="https://medium.com/@ismailismailtj/how-students-will-use-chatgpt-effectively-1d7f57d7e722" target="_blank">Read More</a>
-                    </div>
-                </div>
-                <div class="article">
-                    <h3>Understanding How ChatGPT Works and Addressing Raised Concerns</h3>
-                    <p>A breakdown of ChatGPT’s functionality and a response to common questions and concerns.</p>
-                    <div class="article-link">
-                        <a href="https://medium.com/@ismailismailtj/understanding-how-chatgpt-works-and-addressing-raised-concerns-09f7835d17c0" target="_blank">Read More</a>
-                    </div>
-                </div>
-                <div class="article">
-                    <h3>Path to Artificial General Intelligence (AGI 1)</h3>
-                    <p>The steps and considerations in the journey toward achieving AGI.</p>
-                    <div class="article-link">
-                        <a href="https://medium.com/@ismailismailtj/path-to-artificial-general-intelligence-agi-1-c07208b13020" target="_blank">Read More</a>
-                    </div>
-                </div>
-                <div class="article">
-                    <h3>AI and Future of Jobs</h3>
-                    <p>An analysis of how AI will impact job roles and the workforce in the future.</p>
-                    <div class="article-link">
-                        <a href="https://medium.com/@ismailismailtj/ai-and-future-of-jobs-a831e9bdc494" target="_blank">Read More</a>
-                    </div>
-                </div>
-                <div class="article">
-                    <h3>AI is Here for Good</h3>
-                    <p>A look at the positive impacts of AI and how it can contribute to societal progress.</p>
-                    <div class="article-link">
-                        <a href="https://medium.com/@ismailismailtj/ai-is-here-for-good-bcdb47d6cebe" target="_blank">Read More</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <section id="publications">
-            <h2>Publications</h2>
-            <div class="publications">
-                <div class="publication">
-                    <h3>Performance Comparison of Deep Learning Techniques in Naira Classification</h3>
-                    <p>This study presents the deployment of Deep Learning models, to classify Nigerian Naira notes by denomination, achieving 90.75% training accuracy and 87.04% validation accuracy, with potential applications in automated cash handling, sorting systems, and assistive technology for the visually impaired.</p>
-                    <div class="publication-link">
-                        <a href="https://ijresonline.com/assets/year/volume-11-issue-5/IJRES-V11I5P113.pdf" target="_blank">Read Paper</a>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <section id="skills">
+      <h2>Skills</h2>
+      <div class="skills-list">
+        <span class="skill">Python</span>
+        <span class="skill">TensorFlow</span>
+        <span class="skill">PyTorch</span>
+        <span class="skill">OpenCV</span>
+        <span class="skill">Computer Vision</span>
+        <span class="skill">Deep Learning</span>
+        <span class="skill">Data Collection</span>
+        <span class="skill">Mentorship</span>
+        <span class="skill">Project Management</span>
+        <span class="skill">Open Source</span>
+      </div>
+    </section>
 
-
-        <section id="skills">
-            <h2>Skills</h2>
-            <div class="skills">
-                <div class="skill">Python</div>
-                <div class="skill">TensorFlow</div>
-                <div class="skill">Pytorch</div>
-                <div class="skill">OpenCV</div>
-                <div class="skill">AI & Machine Learning</div>
-                <div class="skill">Deep Learning</div>
-                <div class="skill">Computer Vision</div>
-                <div class="skill">Data Collection</div>
-                <div class="skill">Project Management</div>
-                <div class="skill">Mentorship & Training</div>
-                <div class="skill">Research</div>
-                <div class="skill">Open Source Contribution</div>
-            </div>
-        </section>
-
-        <section id="contact">
-            <h2>Contact</h2>
-            <p>Connect with me on social media or send an email for collaborations or inquiries.</p>
-            <div class="contact-links">
-                <a href="mailto:ismailismailtj@gmail.com" target="_blank">Gmail</a>
-                <a href="https://www.linkedin.com/in/ismail-tijjani-31a41b1aa" target="_blank">LinkedIn</a>
-                <a href="https://www.x.com/esssyjr" target="_blank">X</a>
-                <a href="https://www.github.com/esssyjr" target="_blank">GitHub</a>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2024 Ismail Ismail Tijjani. All Rights Reserved.</p>
-    </footer>
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Let’s connect! Reach out for collaborations or inquiries.</p>
+      <div class="contact-links">
+        <a href="mailto:ismailismailtj@gmail.com" title="Email">Gmail</a>
+        <a href="https://www.linkedin.com/in/ismail-tijjani-31a41b1aa" target="_blank" title="LinkedIn">LinkedIn</a>
+        <a href="https://www.x.com/esssyjr" target="_blank" title="X">X</a>
+        <a href="https://www.github.com/esssyjr" target="_blank" title="GitHub">GitHub</a>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2025 Ismail Ismail Tijjani. All Rights Reserved.</p>
+  </footer>
 </body>
-</html> 
+</html>
