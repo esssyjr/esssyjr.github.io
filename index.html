@@ -6,22 +6,28 @@
   <title>ISMAIL ISMAIL TIJJANI | Researcher & AI Practitioner</title>
   <style>
     :root {
-      --bg: #f8fafc;
+      --bg: #eef4ff;
       --surface: #ffffff;
+      --surface-alt: #f8fbff;
       --text: #0f172a;
       --muted: #475569;
-      --accent: #3b82f6;
-      --accent-2: #f59e0b;
-      --border: rgba(15, 23, 42, 0.08);
-      --shadow: 0 24px 80px rgba(15, 23, 42, 0.08);
+      --accent: #2563eb;
+      --accent-soft: #60a5fa;
+      --accent-warm: #f59e0b;
+      --border: rgba(15, 23, 42, 0.1);
+      --shadow: 0 30px 70px rgba(15, 23, 42, 0.08);
     }
     * {
       box-sizing: border-box;
     }
+    html {
+      scroll-behavior: smooth;
+    }
     body {
       margin: 0;
+      min-height: 100vh;
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: radial-gradient(circle at top, #ffffff 0%, #eef2ff 40%, var(--bg) 100%);
+      background: radial-gradient(circle at top, #ffffff 0%, #eef4ff 42%, #f8fafc 100%);
       color: var(--text);
       line-height: 1.7;
     }
@@ -29,7 +35,7 @@
       color: var(--accent);
       text-decoration: none;
     }
-    body a:hover {
+    a:hover {
       text-decoration: underline;
     }
     header {
@@ -37,8 +43,9 @@
       top: 0;
       z-index: 20;
       backdrop-filter: blur(18px);
-      background: rgba(255,255,255,0.88);
-      border-bottom: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.96);
+      border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.04);
     }
     .container {
       width: min(1180px, calc(100% - 32px));
@@ -47,72 +54,142 @@
     }
     .nav {
       display: flex;
-      flex-wrap: wrap;
       align-items: center;
       justify-content: space-between;
       gap: 12px;
+      flex-wrap: wrap;
     }
     .nav-title {
       font-size: 0.95rem;
       font-weight: 700;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
       color: var(--text);
     }
     .nav-links {
       display: flex;
       flex-wrap: wrap;
-      gap: 16px;
-      font-size: 0.94rem;
-      color: var(--muted);
+      gap: 14px;
+      font-size: 0.93rem;
     }
     .nav-links a {
       color: var(--muted);
-      transition: color .2s ease;
+      padding: 10px 14px;
+      border-radius: 999px;
+      transition: all 0.25s ease;
     }
-    .nav-links a.active,
-    .nav-links a:hover {
-      color: var(--accent);
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: #ffffff;
+      background: linear-gradient(135deg, var(--accent), var(--accent-soft));
     }
     .hero {
-      padding: 48px 0 24px;
+      position: relative;
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(300px, 1fr);
+      gap: 32px;
+      align-items: start;
+      padding: 52px 0 24px;
     }
-    .hero h1 {
-      font-size: clamp(2.8rem, 4vw, 4.2rem);
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 420px;
+      height: 420px;
+      background: radial-gradient(circle, rgba(59, 130, 246, 0.16), transparent 65%);
+      transform: translateX(-50%);
+      z-index: -1;
+    }
+    .hero-content h1 {
+      font-size: clamp(3rem, 5vw, 4.8rem);
+      line-height: 0.98;
       margin: 0;
       letter-spacing: -0.04em;
+      max-width: 10ch;
     }
     .hero p.lead {
-      margin: 18px 0 0;
+      margin: 24px 0 0;
       color: var(--muted);
-      max-width: 780px;
+      max-width: 720px;
       font-size: 1.05rem;
     }
-    .hero .hero-meta {
-      margin-top: 22px;
+    .hero-meta {
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
-      align-items: center;
+      margin-top: 28px;
     }
-    .hero .badge {
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 18px;
       border-radius: 999px;
-      padding: 10px 16px;
-      background: #eef2ff;
+      background: rgba(59, 130, 246, 0.12);
       color: var(--accent);
-      font-size: 0.88rem;
+      font-weight: 700;
+      font-size: 0.86rem;
+    }
+    .hero-panel {
+      position: relative;
+      padding: 32px;
+      background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+      border: 1px solid rgba(59, 130, 246, 0.18);
+      border-radius: 36px;
+      box-shadow: 0 30px 60px rgba(15, 23, 42, 0.09);
+    }
+    .hero-photo {
+      width: 120px;
+      height: 120px;
+      border-radius: 34px;
+      object-fit: cover;
+      border: 3px solid rgba(59, 130, 246, 0.16);
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.12);
+      display: block;
+      margin-bottom: 24px;
+    }
+    .hero-panel h3 {
+      margin: 0 0 18px;
+      font-size: 1.1rem;
+      color: var(--accent);
+      letter-spacing: -0.02em;
+    }
+    .hero-panel p {
+      margin: 0 0 18px;
+      color: var(--muted);
+      line-height: 1.75;
+    }
+    .quick-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 14px;
+    }
+    .quick-list li {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 10px;
+      align-items: center;
+      font-size: 0.97rem;
+      color: var(--muted);
+    }
+    .quick-list strong {
+      color: var(--text);
       font-weight: 700;
     }
     .section {
       margin-top: 40px;
-      padding: 32px;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 28px;
+      padding: 36px;
+      background: rgba(255, 255, 255, 0.96);
+      border: 1px solid rgba(15, 23, 42, 0.08);
+      border-radius: 32px;
       box-shadow: var(--shadow);
       opacity: 0;
       transform: translateY(24px);
-      transition: opacity .6s ease, transform .6s ease;
+      transition: opacity 0.6s ease, transform 0.6s ease;
     }
     .section.visible {
       opacity: 1;
@@ -120,8 +197,19 @@
     }
     .section h2 {
       margin-top: 0;
-      font-size: 1.65rem;
+      margin-bottom: 18px;
+      font-size: 1.8rem;
       letter-spacing: -0.03em;
+      position: relative;
+    }
+    .section h2::after {
+      content: '';
+      display: block;
+      width: 56px;
+      height: 4px;
+      margin-top: 12px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-soft));
     }
     .section p,
     .section li {
@@ -136,34 +224,32 @@
       grid-template-columns: repeat(3, minmax(0, 1fr));
     }
     .card {
-      padding: 22px;
-      border-radius: 22px;
-      background: #f8fbff;
-      border: 1px solid rgba(59, 130, 246, 0.12);
-      box-shadow: 0 18px 50px rgba(15, 23, 42, 0.04);
+      padding: 24px;
+      border-radius: 28px;
+      background: var(--surface-alt);
+      border: 1px solid rgba(59, 130, 246, 0.13);
+      box-shadow: 0 24px 56px rgba(15, 23, 42, 0.06);
     }
     .card h3 {
       margin-top: 0;
       margin-bottom: 12px;
-      font-size: 1.08rem;
+      font-size: 1.05rem;
     }
     .card p {
       margin: 0;
       color: var(--muted);
+      line-height: 1.75;
     }
     .section-columns {
       display: grid;
       gap: 24px;
-    }
-    .text-muted {
-      color: var(--muted);
     }
     .label {
       display: inline-flex;
       align-items: center;
       gap: 8px;
       margin-bottom: 10px;
-      color: var(--accent-2);
+      color: var(--accent-warm);
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.08em;
@@ -174,7 +260,7 @@
       padding: 0;
       list-style: none;
       display: grid;
-      gap: 10px;
+      gap: 12px;
     }
     .link-list li {
       display: flex;
@@ -184,33 +270,25 @@
     }
     .link-list li span {
       color: var(--text);
-      font-weight: 600;
+      font-weight: 700;
       min-width: 112px;
-    }
-    .section pre {
-      white-space: pre-wrap;
-      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-      color: var(--text);
-      background: #f1f5f9;
-      padding: 18px;
-      border-radius: 18px;
-      overflow-x: auto;
-      border: 1px solid var(--border);
     }
     footer {
       text-align: center;
-      margin: 52px auto 24px;
+      margin: 56px auto 24px;
       color: var(--muted);
       font-size: 0.95rem;
     }
-    @media (max-width: 860px) {
-      .grid-3 { grid-template-columns: 1fr; }
-      .nav { flex-direction: column; align-items: flex-start; }
-      .hero .hero-meta { flex-direction: column; align-items: flex-start; }
+    @media (max-width: 980px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+      .nav { justify-content: center; }
     }
-    @media (max-width: 640px) {
-      .section { padding: 24px; }
+    @media (max-width: 760px) {
+      .section { padding: 28px; }
       .container { padding: 0 16px; }
+      .hero { gap: 24px; }
     }
   </style>
 </head>
@@ -235,14 +313,27 @@
 
   <main class="container">
     <section class="hero section visible" id="home">
-      <div class="label">Mechatronics | Computer Vision | MLOps</div>
-      <h1>ISMAIL ISMAIL TIJJANI</h1>
-      <p class="lead">Mechatronics Engineering Graduate | Applied Computer Vision Researcher | MLOps Practitioner</p>
-      <div class="hero-meta">
-        <span class="badge">Researcher</span>
-        <span class="badge">AI Practitioner</span>
-        <span class="badge">Deployment-Aware Systems</span>
+      <div class="hero-content">
+        <div class="label">Mechatronics | Computer Vision | MLOps</div>
+        <h1>ISMAIL ISMAIL TIJJANI</h1>
+        <p class="lead">Mechatronics Engineering Graduate | Applied Computer Vision Researcher | MLOps Practitioner</p>
+        <div class="hero-meta">
+          <span class="badge">Researcher</span>
+          <span class="badge">AI Practitioner</span>
+          <span class="badge">Deployment-Aware Systems</span>
+        </div>
       </div>
+      <aside class="hero-panel">
+        <img class="hero-photo" src="photo.jpg" alt="ISMAIL ISMAIL TIJJANI" />
+        <h3>Quick overview</h3>
+        <p>Experienced in building real-world computer vision systems with deployment-aware AI, dataset-first research, and practical MLOps pipelines.</p>
+        <ul class="quick-list">
+          <li><strong>Focus:</strong><span>Applied computer vision</span></li>
+          <li><strong>Strength:</strong><span>AI systems for agriculture, healthcare, and infrastructure.</span></li>
+          <li><strong>Approach:</strong><span>Data-centric, edge-friendly, resource-aware.</span></li>
+          <li><strong>Current:</strong><span>Founder, researcher, and mentor.</span></li>
+        </ul>
+      </aside>
     </section>
 
     <section class="section" id="contact">
