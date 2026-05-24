@@ -264,14 +264,29 @@
     }
     .link-list li {
       display: flex;
-      gap: 8px;
-      align-items: baseline;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
       font-size: 0.98rem;
     }
     .link-list li span {
       color: var(--text);
       font-weight: 700;
       min-width: 112px;
+    }
+    .action-button {
+      border: none;
+      padding: 10px 18px;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #ffffff;
+      cursor: pointer;
+      font-weight: 700;
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+    .action-button:hover {
+      transform: translateY(-1px);
+      background: var(--accent-soft);
     }
     footer {
       text-align: center;
@@ -325,14 +340,6 @@
       </div>
       <aside class="hero-panel">
         <img class="hero-photo" src="photo.jpg" alt="ISMAIL ISMAIL TIJJANI" />
-        <h3>Quick overview</h3>
-        <p>Experienced in building real-world computer vision systems with deployment-aware AI, dataset-first research, and practical MLOps pipelines.</p>
-        <ul class="quick-list">
-          <li><strong>Focus:</strong><span>Applied computer vision</span></li>
-          <li><strong>Strength:</strong><span>AI systems for agriculture, healthcare, and infrastructure.</span></li>
-          <li><strong>Approach:</strong><span>Data-centric, edge-friendly, resource-aware.</span></li>
-          <li><strong>Current:</strong><span>Founder, researcher, and mentor.</span></li>
-        </ul>
       </aside>
     </section>
 
@@ -340,10 +347,22 @@
       <h2>Contact</h2>
       <p>I am open to research collaborations, academic opportunities, and applied AI projects in computer vision, intelligent systems, and data-centric machine learning. Feel free to reach out for discussions on research, partnerships, or technical inquiries.</p>
       <div class="link-list">
-        <li><span>Email:</span><a href="mailto:ismailismailtj@gmail.com">ismailismailtj@gmail.com</a></li>
-        <li><span>LinkedIn:</span><a href="https://www.linkedin.com/in/ismail-tijjani-31a41b1aa" target="_blank" rel="noreferrer">https://www.linkedin.com/in/ismail-tijjani-31a41b1aa</a></li>
-        <li><span>X (Twitter):</span><a href="https://x.com/esssyjr" target="_blank" rel="noreferrer">https://x.com/esssyjr</a></li>
-        <li><span>GitHub:</span><a href="https://github.com/esssyjr" target="_blank" rel="noreferrer">https://github.com/esssyjr</a></li>
+        <li>
+          <span>Email:</span>
+          <button class="action-button" onclick="location.href='mailto:ismailismailtj@gmail.com'">Email Me</button>
+        </li>
+        <li>
+          <span>LinkedIn:</span>
+          <button class="action-button" onclick="window.open('https://www.linkedin.com/in/ismail-tijjani-31a41b1aa', '_blank')">LinkedIn</button>
+        </li>
+        <li>
+          <span>X:</span>
+          <button class="action-button" onclick="window.open('https://x.com/esssyjr', '_blank')">X</button>
+        </li>
+        <li>
+          <span>GitHub:</span>
+          <button class="action-button" onclick="window.open('https://github.com/esssyjr', '_blank')">GitHub</button>
+        </li>
       </div>
     </section>
 
