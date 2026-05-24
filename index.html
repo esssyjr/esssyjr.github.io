@@ -777,6 +777,8 @@
 
       document.querySelectorAll('main a').forEach(link => {
         link.classList.add('link-button');
+        link.textContent = 'Open';
+        link.title = link.href;
       });
 
       document.querySelectorAll('.nav-links a').forEach(link => {
