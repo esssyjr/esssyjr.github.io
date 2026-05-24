@@ -1,502 +1,671 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ismail Ismail Tijjani - Founder and President of EJAZTECH.AI - AI Researcher - Computer Vision Developer</title>
-    <style>
-        :root {
-            --bg-color: #f0f7ff; /* Light blue background */
-            --primary-color: #1e3a8a; /* Dark blue for headers */
-            --secondary-color: #2563eb; /* Mid-blue for accents */
-            --text-color: #0f172a; /* Almost black text color */
-            --border-color: #e2e8f0; /* Light gray for borders */
-            --accent-light: #93c5fd; /* Light accent blue */
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.7;
-            overflow-x: hidden;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        header {
-            background-color: var(--bg-color);
-            padding: 15px 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        nav ul {
-            display: flex;
-            justify-content: center;
-            list-style-type: none;
-            flex-wrap: wrap;
-            padding: 0;
-        }
-
-        nav ul li {
-            margin: 0 15px;
-        }
-
-        nav ul li a {
-            color: var(--primary-color);
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 0.9rem;
-            padding: 8px 15px;
-            transition: color 0.3s ease, background-color 0.3s ease;
-            border-radius: 5px;
-        }
-
-        nav ul li a:hover {
-            color: var(--bg-color);
-            background-color: var(--secondary-color);
-        }
-
-        main {
-            padding-top: 80px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        section {
-            width: 100%;
-            max-width: 1000px;
-            padding: 30px;
-            margin: 20px 0;
-            border: 1px solid var(--border-color);
-            border-radius: 10px;
-            background-color: #ffffff;
-            text-align: center;
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeInUp 1s forwards;
-        }
-
-        @keyframes fadeInUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        h1, h2 {
-            margin-bottom: 20px;
-            position: relative;
-            font-weight: 300;
-            letter-spacing: 1.2px;
-            color: var(--primary-color);
-        }
-
-        h1 {
-            font-size: 2.5rem;
-            text-transform: uppercase;
-        }
-
-        h2 {
-            font-size: 1.8rem;
-            color: var(--secondary-color);
-        }
-
-        h1::after, h2::after {
-            content: '';
-            display: block;
-            width: 0;
-            height: 2px;
-            background: var(--secondary-color);
-            transition: width 0.4s;
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        h1:hover::after, h2:hover::after {
-            width: 100%;
-        }
-
-        .projects, .articles, .publications {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .project, .article, .publications {
-            background-color: var(--accent-light);
-            border: 1px solid var(--border-color);
-            border-radius: 10px;
-            padding: 20px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .project:hover, .article:hover, .publication:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-        }
-
-        .project-links, .article-link {
-            margin-top: 15px;
-        }
-
-        .project-links a, .article-link a {
-            color: var(--secondary-color);
-            text-decoration: none;
-            font-size: 1rem;
-            margin-right: 10px;
-            padding: 5px 12px;
-            border: 1px solid var(--secondary-color);
-            border-radius: 5px;
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
-
-        .project-links a:hover, .article-link a:hover {
-            color: #ffffff;
-            background-color: var(--secondary-color);
-        }
-
-        #skills {
-            margin-top: 20px;
-            animation-delay: 1s;
-        }
-
-        .skills {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-        }
-
-        .skill {
-            margin: 10px;
-            text-align: center;
-            border: 1px solid var(--secondary-color);
-            padding: 10px 20px;
-            border-radius: 5px;
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
-
-        .skill:hover {
-            color: #ffffff;
-            background-color: var(--secondary-color);
-        }
-
-        .contact-links {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 30px;
-        }
-
-        .contact-links a {
-            color: var(--primary-color);
-            text-decoration: none;
-            font-size: 1.2em;
-            transition: color 0.3s ease;
-        }
-
-        .contact-links a:hover {
-            color: var(--secondary-color);
-            text-decoration: underline;
-        }
-
-        footer {
-            text-align: center;
-            padding: 15px 0;
-            background-color: var(--bg-color);
-            margin-top: 20px;
-            border-top: 1px solid var(--border-color);
-        }
-
-        @media (max-width: 768px) {
-            nav ul {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            nav ul li {
-                margin: 10px 0;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ISMAIL ISMAIL TIJJANI | Researcher & AI Practitioner</title>
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --surface: #ffffff;
+      --text: #0f172a;
+      --muted: #475569;
+      --accent: #3b82f6;
+      --accent-2: #f59e0b;
+      --border: rgba(15, 23, 42, 0.08);
+      --shadow: 0 24px 80px rgba(15, 23, 42, 0.08);
+    }
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #ffffff 0%, #eef2ff 40%, var(--bg) 100%);
+      color: var(--text);
+      line-height: 1.7;
+    }
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    body a:hover {
+      text-decoration: underline;
+    }
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(18px);
+      background: rgba(255,255,255,0.88);
+      border-bottom: 1px solid var(--border);
+    }
+    .container {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 24px 0;
+    }
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .nav-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text);
+    }
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 0.94rem;
+      color: var(--muted);
+    }
+    .nav-links a {
+      color: var(--muted);
+      transition: color .2s ease;
+    }
+    .nav-links a.active,
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+    .hero {
+      padding: 48px 0 24px;
+    }
+    .hero h1 {
+      font-size: clamp(2.8rem, 4vw, 4.2rem);
+      margin: 0;
+      letter-spacing: -0.04em;
+    }
+    .hero p.lead {
+      margin: 18px 0 0;
+      color: var(--muted);
+      max-width: 780px;
+      font-size: 1.05rem;
+    }
+    .hero .hero-meta {
+      margin-top: 22px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+    }
+    .hero .badge {
+      border-radius: 999px;
+      padding: 10px 16px;
+      background: #eef2ff;
+      color: var(--accent);
+      font-size: 0.88rem;
+      font-weight: 700;
+    }
+    .section {
+      margin-top: 40px;
+      padding: 32px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity .6s ease, transform .6s ease;
+    }
+    .section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .section h2 {
+      margin-top: 0;
+      font-size: 1.65rem;
+      letter-spacing: -0.03em;
+    }
+    .section p,
+    .section li {
+      color: var(--muted);
+      font-size: 1rem;
+    }
+    .grid {
+      display: grid;
+      gap: 20px;
+    }
+    .grid-3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+    .card {
+      padding: 22px;
+      border-radius: 22px;
+      background: #f8fbff;
+      border: 1px solid rgba(59, 130, 246, 0.12);
+      box-shadow: 0 18px 50px rgba(15, 23, 42, 0.04);
+    }
+    .card h3 {
+      margin-top: 0;
+      margin-bottom: 12px;
+      font-size: 1.08rem;
+    }
+    .card p {
+      margin: 0;
+      color: var(--muted);
+    }
+    .section-columns {
+      display: grid;
+      gap: 24px;
+    }
+    .text-muted {
+      color: var(--muted);
+    }
+    .label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 10px;
+      color: var(--accent-2);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 0.78rem;
+    }
+    .link-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 10px;
+    }
+    .link-list li {
+      display: flex;
+      gap: 8px;
+      align-items: baseline;
+      font-size: 0.98rem;
+    }
+    .link-list li span {
+      color: var(--text);
+      font-weight: 600;
+      min-width: 112px;
+    }
+    .section pre {
+      white-space: pre-wrap;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      color: var(--text);
+      background: #f1f5f9;
+      padding: 18px;
+      border-radius: 18px;
+      overflow-x: auto;
+      border: 1px solid var(--border);
+    }
+    footer {
+      text-align: center;
+      margin: 52px auto 24px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+    @media (max-width: 860px) {
+      .grid-3 { grid-template-columns: 1fr; }
+      .nav { flex-direction: column; align-items: flex-start; }
+      .hero .hero-meta { flex-direction: column; align-items: flex-start; }
+    }
+    @media (max-width: 640px) {
+      .section { padding: 24px; }
+      .container { padding: 0 16px; }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About Me</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#articles">Articles</a></li>
-                <li><a href="#publications">Publications</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+  <header>
+    <div class="container nav">
+      <div class="nav-title">ISMAIL ISMAIL TIJJANI</div>
+      <nav class="nav-links" id="topNav">
+        <a href="#home">Home</a>
+        <a href="#contact">Contact</a>
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#publications">Publications</a>
+        <a href="#projects">Projects</a>
+        <a href="#datasets">Datasets</a>
+        <a href="#articles">Articles</a>
+        <a href="#skills">Skills</a>
+        <a href="#awards">Awards</a>
+      </nav>
+    </div>
+  </header>
 
-    <main>
-        <section id="home">
-            <h1>Ismail Ismail Tijjani</h1>
-            <p>Founder and President of EJAZTECH.AI</p>
-            <p>AI Researcher</p>
-            <p>Computer Vision Developer</p>
-        </section>
+  <main class="container">
+    <section class="hero section visible" id="home">
+      <div class="label">Mechatronics | Computer Vision | MLOps</div>
+      <h1>ISMAIL ISMAIL TIJJANI</h1>
+      <p class="lead">Mechatronics Engineering Graduate | Applied Computer Vision Researcher | MLOps Practitioner</p>
+      <div class="hero-meta">
+        <span class="badge">Researcher</span>
+        <span class="badge">AI Practitioner</span>
+        <span class="badge">Deployment-Aware Systems</span>
+      </div>
+    </section>
 
-        <section id="about">
-            <h2>About Me</h2>
-            <p>A computer vision developer, AI researcher, and a fourth-year Mechatronics Engineering student. As the founder of EJAZTECH.AI, I specialize in developing AI-driven solutions that address local challenges in Nigeria and Africa. I have collaborated with various companies to build tailored AI models for their specific needs. Additionally, I lead a mentorship program through my company, guiding aspiring youths in their AI careers. My mission is to empower individuals to innovate and create transformative technologies for the betterment of Nigeria and the broader African continent.</p>
-        </section>
+    <section class="section" id="contact">
+      <h2>Contact</h2>
+      <p>I am open to research collaborations, academic opportunities, and applied AI projects in computer vision, intelligent systems, and data-centric machine learning. Feel free to reach out for discussions on research, partnerships, or technical inquiries.</p>
+      <div class="link-list">
+        <li><span>Email:</span><a href="mailto:ismailismailtj@gmail.com">ismailismailtj@gmail.com</a></li>
+        <li><span>LinkedIn:</span><a href="https://www.linkedin.com/in/ismail-tijjani-31a41b1aa" target="_blank" rel="noreferrer">https://www.linkedin.com/in/ismail-tijjani-31a41b1aa</a></li>
+        <li><span>X (Twitter):</span><a href="https://x.com/esssyjr" target="_blank" rel="noreferrer">https://x.com/esssyjr</a></li>
+        <li><span>GitHub:</span><a href="https://github.com/esssyjr" target="_blank" rel="noreferrer">https://github.com/esssyjr</a></li>
+      </div>
+    </section>
 
-        <section id="projects">
-            <h2>Projects</h2>
-            
-            <div class="projects">
-                <div class="project">
-                    <h3>Food Vision</h3>
-                    <p>Food Vision is a cutting-edge Nigerian food detection and analysis system that combines Roboflow, Google Gemini AI, Gradio, and Text-to-Speech technologies to provide instant, AI-driven insights on any food image. Simply upload a picture, and get real-time summaries on its health benefits, nutritional value, diabetic suitability, ingredients, and preparation method.</p>
-                    <div class="project-links">
-                        <a href="https://youtu.be/WsCxMQOw78I?si=5SDpxRre045zTSj-" target="_blank">Video Demo</a>
-                        <a href="https://huggingface.co/spaces/esssyjr/FOOD" target="_blank">Website Demo</a>
-                        <a href="https://github.com/esssyjr/Food-Vision" target="_blank">Github Page</a>
-                    </div>
-                </div>
-                <div class="project">
-                    <h3>Halal View</h3>
-                    <p>The Halal View System is an AI-powered content moderation solution designed to automatically detect underdressed individuals in visual media and apply a blur effect to protect viewers from exposure to such content. This innovation is particularly beneficial for ensuring a family-friendly and culturally respectful viewing experience, making it suitable for TV stations, social media platforms, and digital content providers. </p>
-                    <div class="project-links">
-                        <a href="https://youtu.be/_1HlX8Evazo?si=TELF7BqYAT9p9k9j" target="_blank">Video Demo</a>
-                    </div>
-                </div>
-                <div class="project">
-                    <h3>MPOX DETECTION</h3>
-                    <p>THIS REPOSITORY HOSTS THE CODE FOR A DEEP LEARNING-BASED MPOX DETECTION API, DESIGNED TO IDENTIFY MPOX LESIONS IN MEDICAL IMAGES. THIS API IS INTENDED TO SUPPORT HEALTHCARE APPLICATIONS WHERE EFFICIENT AND ACCURATE DETECTION IS ESSENTIAL.</p>
-                    <div class="project-links">
-                        <a href="https://github.com/esssyjr/MPOX_DETECTION" target="_blank">GitHub</a>
-                    </div>
-                </div>
-                <div class="project">
-                    <h3>AGRIAI: Plant Detection and their Health Conditions System</h3>
-                    <p>This project, leverages AI to help farmers and agricultural stakeholders monitor crop health and detect plant. The solution combines plant detection and health condition into a single, user-friendly interface.</p>
-                    <div class="project-links">
-                        <a href="https://github.com/esssyjr/Plant_Detection_and_their_Health_Conditions" target="_blank">GitHub</a>
-                        <a href="https://huggingface.co/spaces/esssyjr/Plant_Detection_and_Their_Health_Condition_FCMB_HACKATHON" target="_blank">Website Demo</a>
-                        <a href="https://drive.google.com/file/d/14aV22Wq9OXHIeZM6AwJSG6rfe1_9zJJq/view?usp=drive_link" target="_blank">Video Demo</a>
-                    </div>
-                </div>
-                <div class="project">
-                    <h3>Nigeria License Plate Detection and Recognition System (NLPDRS)</h3>
-                    <p>The NLPDRS is an advanced AI-driven tool designed to detect and recognize Nigerian license plates from vehicles in various conditions.</p>
-                    <div class="project-links">
-                        <a href="https://github.com/esssyjr/Nigeria-License-Plate-Detection-and-Recognition-System-NLPDRS" target="_blank">GitHub</a>
-                        <a href="https://www.linkedin.com/feed/update/urn:li:activity:7227051054800990210" target="_blank">Video Demo</a>
-                    </div>
-                </div>
-                <div class="project">
-                    <h3>AI-Powered Naira Classification Model</h3>
-                    <p>This model aims to identify the denominations of Nigerian Naira banknotes, including 5, 10, 20, 50, 100, 200, 500, and 1000 Naira notes. Such a model can be seamlessly integrated into various automated systems, including cash deposit machines, currency sorting machines, and more.</p>
-                    <div class="project-links">
-                        <a href="https://github.com/esssyjr/NAIRA_CLASSIFICATION" target="_blank">GitHub</a>
-                        <a href="https://www.linkedin.com/feed/update/urn:li:activity:7207685557924147200/?originTrackingId=sjuhZOhuTW%2BjDscnAWQM7Q%3D%3D" target="_blank">Video Demo</a>
-                    </div>
-                </div>
-                <div class="project">
-                    <h3>KEKE_NAPEP DETECTION AND TRACKING SYSTEM</h3>
-                    <p>The KEKE_NAPEP Detection and Tracking System is an AI-driven solution designed for real-time identification, tracking, and monitoring of tricycles (KEKE_NAPEP) in images and video streams. Given that KEKE_NAPEP serves as a major public transportation mode in Nigeria, this system offers critical insights for traffic management, fleet monitoring, toll gate monitoring, revenue tracking and urban mobility analytics. </p>
-                    <div class="project-links">
-                        <a href="https://github.com/esssyjr/KEKE_NAPEP_DETECTION_AND_TRACKING_SYSTEM" target="_blank">GitHub</a>
-                        <a href="https://youtu.be/sZ4QVAU8XIg?si=vBMNiVAFNJgGR16n" target="_blank">Video Demo 1</a>
-                        <a href="https://youtu.be/UOqrPQgLDT8?si=hdb-toFdPTlIlgwO" target="_blank">Video Demo 2</a>
-                        <a href="https://huggingface.co/spaces/esssyjr/KEKE_NAPEP_DETECTION" target="_blank">Website Demo</a>
-                    </div>
-                </div>
-                <div class="project">
-                    <h3>SPORTS CLASSIFICATION</h3>
-                    <p>This Sports Classifier is a cutting-edge computer vision project that harnesses the power of MobileNet transfer learning to accurately classify images across 100 sports categories.</p>
-                    <div class="project-links">
-                        <a href="https://github.com/esssyjr/SPORTS_CLASSIFICATION" target="_blank">GitHub</a>
-                    </div>
-                </div>
-                <div class="project">
-                    <h3>SURFACE CRACK CLASSIFICATIONS</h3>
-                    <p>This Surface Crack Classifier project is a sophisticated computer vision model designed to address the critical task of classifying surface images into two distinct categories: surfaces with cracks and those without.</p>
-                    <div class="project-links">
-                        <a href="https://github.com/esssyjr/SURFACE_CRACK_CLASSIFICATIONS" target="_blank">GitHub</a>
-                    </div>
-                </div>
-                <div class="project">
-                    <h3>6 PLACES CLASSIFICATION</h3>
-                    <p>This project contains a deep learning model for classifying images into categories such as 'buildings', 'forest', 'glacier', 'mountain', 'sea', and 'street'. </p>
-                    <div class="project-links">
-                        <a href="https://github.com/esssyjr/6-PLACES-CLASSIFICATION" target="_blank">GitHub</a>
-                    </div>
-                </div>
-                <div class="project">
-                    <h3>4 Animals Classification</h3>
-                    <p>This project contains a deep learning model for classifying images of cats, dogs, elephants, and giraffes.</p>
-                    <div class="project-links">
-                        <a href="https://github.com/esssyjr/4-Animals-Classification" target="_blank">GitHub</a>
-                    </div>
-                </div>
+    <section class="section" id="about">
+      <h2>About Me</h2>
+      <p>I am a Mechatronics Engineering researcher and developer focused on computer vision systems designed for real-world deployment. My work is guided by a data-centric and deployment-aware approach to building intelligent systems that operate reliably in resource-constrained and underrepresented environments.</p>
+      <p>My technical experience spans the full pipeline of intelligent system development, from dataset collection and annotation to deep learning model design, including object detection, instance segmentation, and OCR systems, as well as elements of MLOps for model training and deployment. I am particularly interested in the integration of perception systems with practical deployment constraints, with applications in agriculture, medical imaging, and intelligent infrastructure monitoring.</p>
+      <p>I am also the founder of EJAZTECH.AI, an initiative focused on bridging the gap between local AI landscape and the global ecosystem.</p>
+    </section>
 
-                <div class="project">
-                    <h3>Binary Classification Bike Buyer</h3>
-                    <p>This Project demonstrates the classification of bike buyers using various machine learning models. It includes data preprocessing, model implementation (Decision Tree, Logistic Regression, and Neural Network), and evaluation of model accuracies.</p>
-                    <div class="project-links">
-                        <a href="https://github.com/esssyjr/Binary-Classification-Bike-Buyer" target="_blank">GitHub</a>
-                    </div>
-                </div>
-                <div class="project">
-                    <h3>Multi class Classification of Dry Beans</h3>
-                    <p>This project aims to classify different types of dry beans using a Neural Network model trained on the Dry Bean Dataset.</p>
-                    <div class="project-links">
-                        <a href="https://github.com/esssyjr/Multi-class-Classification-of-Dry-Beanss" target="_blank">GitHub</a>
-                    </div>
-                </div>
-                <div class="project">
-                    <h3>DCARS</h3>
-                    <p>Diagnostic Center Automated Reception System</p>
-                    <div class="project-links">
-                        <a href="https://github.com/esssyjr/DCARS" target="_blank">GitHub</a>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <section class="section" id="research">
+      <h2>Research Interests</h2>
+      <p>My research focuses on developing efficient and robust mechatronic systems integrated with artificial intelligence for real-world, resource-constrained environments. I am particularly interested in data-efficient computer vision, where models are designed to perform reliably under limited computation and small or imperfect datasets.</p>
+      <p>I am also interested in embodied AI and intelligent robotic systems, with an emphasis on integrating perception models into physical agents. In addition, I am interested in multimodal learning approaches that improve adaptability in complex, real-world scenarios.</p>
+    </section>
 
-        <section id="articles">
-            <h2>Articles</h2>
-            <div class="articles">
-                <div class="article">
-                    <h3>Integrating Gemini, Roboflow, Gradio, and Hugging Face to Build AI-Powered Systems</h3>
-                    <p>How to build a system that integrates Google’s Gemini, Roboflow, Gradio, and Hugging Face. I used food vision system that detects foods in images, generates tailored insights, and provides an interactive web interface with audio output.</p>
-                    <div class="article-link">
-                        <a href="https://medium.com/@ismailismailtj/integrating-gemini-roboflow-gradio-and-hugging-face-to-build-ai-powered-systems-887f4d91f60b" target="_blank">Read More</a>
-                    </div>
-                </div>
-                <div class="article">
-                    <h3>Building Africa’s AI Future Starts with Data Collection: A Call to Action</h3>
-                    <p>Africa risks lagging in the AI revolution due to inadequate data collection. AI's effectiveness hinges on quality, location-specific data, yet many African organizations lack digitized records. Importing Western AI solutions is ineffective, as they fail to address African contexts.</p>
-                    <div class="article-link">
-                        <a href="https://medium.com/@ismailismailtj/building-africas-ai-future-starts-with-data-collection-a-call-to-action-645d2438aee5" target="_blank">Read More</a>
-                    </div>
-                </div>
-                <div class="article">
-                    <h3>AI Beyond Coding: A Data-Centric Paradigm</h3>
-                    <p>AI development goes beyond coding, which accounts for ~30% of the process. It involves scoping projects, collecting and preprocessing data, building and evaluating models, testing, and deploying systems with ongoing automation. The focus has shifted to a data-centric approach, prioritizing high-quality, diverse datasets over model tweaking.</p>
-                    <div class="article-link">
-                        <a href="https://medium.com/@ismailismailtj/ai-beyond-coding-a-data-centric-paradigm-7f4577748c5a" target="_blank">Read More</a>
-                    </div>
-                </div>
-                <div class="article">
-                    <h3>Path to Artificial General Intelligence (AGI) 2</h3>
-                    <p>Challenging the term 'Artificial General Intelligence,' favoring 'Human-Level Intelligence.' It outlines essential cognitive traits needed for true machine intelligence: learning, memory, reasoning, and planning. It emphasizes the gradual, collaborative journey required to reach AGI.</p>
-                    <div class="article-link">
-                        <a href="https://medium.com/@ismailismailtj/path-to-artificial-general-intelligence-agi-2-6c5051af0baf" target="_blank">Read More</a>
-                    </div>
-                </div>
-                <div class="article">
-                    <h3>How Students Will Use ChatGPT Effectively</h3>
-                    <p>Explores how students can use ChatGPT wisely for learning, emphasizing summarization and idea support while highlighting the importance of fact-checking and academic integrity.</p>
-                    <div class="article-link">
-                        <a href="https://medium.com/@ismailismailtj/how-students-will-use-chatgpt-effectively-1d7f57d7e722" target="_blank">Read More</a>
-                    </div>
-                </div>
-                <div class="article">
-                    <h3>Understanding How ChatGPT Works and Addressing Raised Concerns</h3>
-                    <p>A breakdown of ChatGPT’s functionality and a response to common questions and concerns.</p>
-                    <div class="article-link">
-                        <a href="https://medium.com/@ismailismailtj/understanding-how-chatgpt-works-and-addressing-raised-concerns-09f7835d17c0" target="_blank">Read More</a>
-                    </div>
-                </div>
-                <div class="article">
-                    <h3>Path to Artificial General Intelligence (AGI 1)</h3>
-                    <p>The steps and considerations in the journey toward achieving AGI.</p>
-                    <div class="article-link">
-                        <a href="https://medium.com/@ismailismailtj/path-to-artificial-general-intelligence-agi-1-c07208b13020" target="_blank">Read More</a>
-                    </div>
-                </div>
-                <div class="article">
-                    <h3>AI and Future of Jobs</h3>
-                    <p>An analysis of how AI will impact job roles and the workforce in the future.</p>
-                    <div class="article-link">
-                        <a href="https://medium.com/@ismailismailtj/ai-and-future-of-jobs-a831e9bdc494" target="_blank">Read More</a>
-                    </div>
-                </div>
-                <div class="article">
-                    <h3>AI is Here for Good</h3>
-                    <p>A look at the positive impacts of AI and how it can contribute to societal progress.</p>
-                    <div class="article-link">
-                        <a href="https://medium.com/@ismailismailtj/ai-is-here-for-good-bcdb47d6cebe" target="_blank">Read More</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <section id="publications">
-            <h2>Publications</h2>
-            <div class="publications">
-                <div class="publication">
-                    <h3>Performance Comparison of Deep Learning Techniques in Naira Classification</h3>
-                    <p>This study presents the deployment of Deep Learning models, to classify Nigerian Naira notes by denomination, achieving 90.75% training accuracy and 87.04% validation accuracy, with potential applications in automated cash handling, sorting systems, and assistive technology for the visually impaired.</p>
-                    <div class="publication-link">
-                        <a href="https://ijresonline.com/assets/year/volume-11-issue-5/IJRES-V11I5P113.pdf" target="_blank">Read Paper</a>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <section class="section" id="education">
+      <h2>Education</h2>
+      <p>Bayero University Kano Bachelor of Engineering in Mechatronics 2020- 2026</p>
+    </section>
 
+    <section class="section" id="publications">
+      <h2>Publications</h2>
+      <div class="card">
+        <h3>NLPDRS: A YOLOv8 and PaddleOCR-Based End-to-End Framework for Nigerian License Plate Detection and Recognition System</h3>
+        <p>II Tijjani, SM Ibrahim, AA Mustapha (Oct, 2025)</p>
+        <p>Link: <a href="https://ijsrcse.isroset.org/index.php/j/article/view/748" target="_blank" rel="noreferrer">https://ijsrcse.isroset.org/index.php/j/article/view/748</a></p>
+        <p>This localized, end-to-end framework tackles the failure of standard vehicle tracking systems against the non-uniform fonts and unpredictable lighting typical of Nigerian license plates. By building a custom-annotated dataset and leveraging YOLOv8 for real-time plate localization, the system utilizes an optimized OCR pipeline enhanced by k-means clustering and adaptive thresholding to deliver highly accurate alphanumeric extraction. The resulting model achieves a 0.93 mAP@0.5, 0.91 recall, and 0.87 precision, providing a scalable solution ready for real-world deployment in local traffic monitoring, automated access control, and national security infrastructure.</p>
+      </div>
+      <div class="card">
+        <h3>Performance Comparison of Deep Learning Techniques in Naira Classification</h3>
+        <p>II Tijjani, AA Mustapha, IT Idris (Oct, 2024)</p>
+        <p>Link: <a href="https://arxiv.org/abs/2412.02072" target="_blank" rel="noreferrer">https://arxiv.org/abs/2412.02072</a></p>
+        <p>This study addresses the challenge of automated currency recognition by deploying and evaluating deep learning architectures to classify Nigerian Naira notes by denomination. Utilizing a diverse custom dataset of 1,808 images captured under varying environmental conditions, the framework evaluates multiple models, with MobileNetV2 achieving peak performance, yielding a 90.75% training accuracy and an 87.04% validation accuracy. Optimized for efficiency and light footprint, this model provides a scalable, edge-ready solution designed for real-world integration into automated cash sorting systems, vending hardware, and assistive technologies for the visually impaired, ultimately enhancing financial transaction security and efficiency.</p>
+      </div>
+    </section>
 
-        <section id="skills">
-            <h2>Skills</h2>
-            <div class="skills">
-                <div class="skill">Python</div>
-                <div class="skill">TensorFlow</div>
-                <div class="skill">Pytorch</div>
-                <div class="skill">OpenCV</div>
-                <div class="skill">AI & Machine Learning</div>
-                <div class="skill">Deep Learning</div>
-                <div class="skill">Computer Vision</div>
-                <div class="skill">Data Collection</div>
-                <div class="skill">Project Management</div>
-                <div class="skill">Mentorship & Training</div>
-                <div class="skill">Research</div>
-                <div class="skill">Open Source Contribution</div>
-            </div>
-        </section>
+    <section class="section" id="conference">
+      <h2>Conference Papers</h2>
+      <div class="card">
+        <h3>Data-Driven Approach in Reservoir Production Forecast: Comparison of Machine Learning and Deep Learning</h3>
+        <p>SI Muhammad, N Makwashi, A Abdulsalam, II Tijjani (Aug, 2025)</p>
+        <p>Presented at the SPE Nigeria Annual International Conference and Exhibition</p>
+        <p>Link: <a href="https://doi.org/10.2118/228783-MS" target="_blank" rel="noreferrer">https://doi.org/10.2118/228783-MS</a></p>
+        <p>This data-driven study tackles the economic challenges of declining hydrocarbons and rising unwanted fluid production by optimizing production forecasting through machine learning and deep learning. By evaluating regression models (Decision Tree and Random Forest) against sequential time-series models (RNN and LSTM), the framework leverages key operational inputs, such as choke size and various pressure metrics, to forecast oil, gas, and water outputs simultaneously. All architectures achieved robust performance with R² scores exceeding 0.85, while the LSTM model proved superior with a peak R² of 0.95 due to its strength in capturing long-term temporal dependencies in reservoir data. The resulting framework provides a highly accurate, computationally efficient alternative to traditional reservoir simulation, offering a scalable asset for strategic production planning and cost-effective reservoir management.</p>
+      </div>
+      <div class="card">
+        <h3>Evaluating Vision-Language Models as a Zero-Shot Learning Alternative to You Only Look Once and Optical Character Recognition for Nigerian License Plate Recognition</h3>
+        <p>II Tijjani, AA Mustapha, SI Muhammad, MB Aliyu (Nov, 2025)</p>
+        <p>Presented at ICCAIT (International Conference on Computing and Artificial Intelligence Technologies)</p>
+        <p>Presented by: Self</p>
+        <p>This study evaluates the potential of Vision-Language Models (VLMs) as a unified, zero-shot alternative to traditional, resource-heavy multi-stage YOLO and OCR pipelines for license plate recognition. Utilizing a curated benchmark dataset of 88 challenging real-world images from Nigeria, the research conducts a comparative analysis across five leading architectures: Gemini 2.0 Flash, Qwen2.5-VL-7B-Instruct, GPT-4o, Claude 4 Sonnet, and Llama 3.2 Vision 90b. Evaluated via Character Error Rate (CER), the findings reveal that Gemini and Qwen significantly outperform competing models in both accuracy and robustness under unstructured environmental conditions. The work provides critical insights into the practical advantages of zero-shot VLMs in regional surveillance, while objectively challenging provider performance claims in complex, real-world edge scenarios.</p>
+      </div>
+      <div class="card">
+        <h3>Sesame Plant Segmentation Dataset: A YOLO-Formatted Annotated Dataset</h3>
+        <p>SI Muhammad, II Tijjani, SY Jumare, FI Jibrin (Nov, 2025)</p>
+        <p>Presented at ICCAIT (International Conference on Computing and Artificial Intelligence Technologies)</p>
+        <p>Presented by: Co-author</p>
+        <p>This paper introduces an open-source, pixel-level annotated dataset designed to advance computer vision applications for sesame cultivation during crucial early growth stages. Compiled from high-resolution imagery captured under diverse environmental conditions across farms in Katsina State, Nigeria, the dataset features images structured in a YOLO-compatible format and annotated via the Segment Anything Model (SAM 2) under farmer supervision. Evaluated using the Ultralytics YOLOv8 framework, the baseline models achieved strong results across both tasks, yielding an 84% detection mAP@0.5 and an 84% segmentation mAP@0.5. By shifting from standard bounding boxes to precise instance segmentation, this localized resource provides a foundational framework for real-world agricultural automation, including autonomous weeding, plant health monitoring, and precise yield estimation.</p>
+      </div>
+    </section>
 
-        <section id="contact">
-            <h2>Contact</h2>
-            <p>Connect with me on social media or send an email for collaborations or inquiries.</p>
-            <div class="contact-links">
-                <a href="mailto:ismailismailtj@gmail.com" target="_blank">Gmail</a>
-                <a href="https://www.linkedin.com/in/ismail-tijjani-31a41b1aa" target="_blank">LinkedIn</a>
-                <a href="https://www.x.com/esssyjr" target="_blank">X</a>
-                <a href="https://www.github.com/esssyjr" target="_blank">GitHub</a>
-            </div>
-        </section>
-    </main>
+    <section class="section" id="selected-projects">
+      <h2>Selected Projects</h2>
+      <div class="card">
+        <h3>Autonomous AI-Powered Three-Wheeled Herbicide Sprayer</h3>
+        <p>Designed and manufactured a customized three-wheeled robotic platform optimized for stability during localized agricultural operations. The system deploys a camera to feed real-time visual frames into an edge-optimized YOLO instance segmentation framework that detects weeds during crucial early plant growth stages. The mechatronic control pipeline processes these coordinates instantly, executing localized micro-interventions by triggering target-specific spray actuators to eliminate the weed while conserving chemical volume and protecting adjacent crops.</p>
+      </div>
+      <div class="card">
+        <h3>Nigeria License Plate Detection and Recognition System (NLPDRS)</h3>
+        <p>A robust vehicle identification framework featuring a custom YOLOv8 model for real-time license plate localization and an optimized character recognition engine to extract non-uniform text. Engineered to handle regional plate variations and complex lighting, the system integrates an intelligent mechatronic hardware layer utilizing IR sensors for vehicle detection and dynamic database querying for instant plate validation. Upon verification, the system updates security records and provides real-time feedback, triggering an onboard buzzer alert if an unauthorized or flagged vehicle is detected.</p>
+        <p>GitHub Page: <a href="https://github.com/esssyjr/Nigeria-License-Plate-Detection-and-Recognition-System-NLPDRS" target="_blank" rel="noreferrer">https://github.com/esssyjr/Nigeria-License-Plate-Detection-and-Recognition-System-NLPDRS</a></p>
+        <p>Video Demo: <a href="https://www.linkedin.com/feed/update/urn:li:activity:7227051054800990210" target="_blank" rel="noreferrer">https://www.linkedin.com/feed/update/urn:li:activity:7227051054800990210</a></p>
+      </div>
+      <div class="card">
+        <h3>MPOX Detection API</h3>
+        <p>A specialized deep learning framework and inference API optimized to accelerate clinical workflows by detecting MPox lesions from dermatological and medical imagery. Built to provide reliable diagnostic support, this system can be integrated into telemedicine platforms and mobile health applications to assist frontline workers with rapid triage.</p>
+        <p>Github Page: <a href="https://github.com/esssyjr/MPOX_DETECTION" target="_blank" rel="noreferrer">https://github.com/esssyjr/MPOX_DETECTION</a></p>
+      </div>
+      <div class="card">
+        <h3>AI-Powered Naira Classification Model</h3>
+        <p>A deep learning classification model trained on a diverse dataset of Nigerian banknotes for robust recognition under non-ideal conditions. Optimized for edge deployment, the system integrates an end-to-end MLOps pipeline using MLflow and Airflow for experiment tracking, automated retraining, and continuous deployment. It also includes a web interface and a human-in-the-loop validation system for feedback-driven model improvement.</p>
+        <p>GitHub Page: <a href="https://github.com/esssyjr/NAIRA_CLASSIFICATION" target="_blank" rel="noreferrer">https://github.com/esssyjr/NAIRA_CLASSIFICATION</a></p>
+        <p>Video Demo: <a href="https://www.linkedin.com/feed/update/urn:li:activity:7207685557924147200/?originTrackingId=sjuhZOhuTW%2BjDscnAWQM7Q%3D%3D" target="_blank" rel="noreferrer">https://www.linkedin.com/feed/update/urn:li:activity:7207685557924147200/?originTrackingId=sjuhZOhuTW%2BjDscnAWQM7Q%3D%3D</a></p>
+      </div>
+      <div class="card">
+        <h3>AgriAI: Weed Detection & Crop Health Monitor</h3>
+        <p>An agricultural vision platform that addresses crop management challenges by combining real-time weed detection and health monitoring into a unified system. Developed using precise localized field data, the solution provides an accessible interactive web dashboard designed to assist farmers with target-specific interventions and automated field management.</p>
+        <p>GitHub Page: <a href="https://github.com/esssyjr/Plant_Detection_and_their_Health_Conditions" target="_blank" rel="noreferrer">https://github.com/esssyjr/Plant_Detection_and_their_Health_Conditions</a></p>
+        <p>Website Demo: <a href="https://huggingface.co/spaces/esssyjr/Plant_Detection_and_Their_Health_Condition_FCMB_HACKATHON" target="_blank" rel="noreferrer">https://huggingface.co/spaces/esssyjr/Plant_Detection_and_Their_Health_Condition_FCMB_HACKATHON</a></p>
+        <p>Video Demo: <a href="https://drive.google.com/file/d/14aV22Wq9OXHIeZM6AwJSG6rfe1_9zJJq/view?usp=drive_link" target="_blank" rel="noreferrer">https://drive.google.com/file/d/14aV22Wq9OXHIeZM6AwJSG6rfe1_9zJJq/view?usp=drive_link</a></p>
+      </div>
+    </section>
 
-    <footer>
-        <p>&copy; 2024 Ismail Ismail Tijjani. All Rights Reserved.</p>
-    </footer>
+    <section class="section" id="work-experience">
+      <h2>Work Experience</h2>
+      <div class="grid grid-3">
+        <div class="card">
+          <h3>Founder and President, EJAZTECH.AI</h3>
+          <p>July 2023 – Present</p>
+          <p>Founded and led an AI initiative focused on developing locally relevant datasets and AI solutions.</p>
+          <p>Mentored 3,000+ students in AI through structured training programs and workshops.</p>
+          <p>Led development of multiple real-world AI systems across agriculture, security, and healthcare.</p>
+          <p>Coordinated collaborative research and engineering teams for AI solution development.</p>
+        </div>
+        <div class="card">
+          <h3>Computer Vision Developer, InnovateHealth Africa</h3>
+          <p>September 2024 – Present</p>
+          <p>Designed and deployed computer vision models for healthcare applications, including disease detection and analysis systems.</p>
+          <p>Led dataset curation and annotation pipelines for high-quality medical imaging datasets.</p>
+          <p>Collaborated with cross-functional teams to integrate AI solutions into real-world healthcare workflows.</p>
+          <p>Contributed to scalable AI system design for practical deployment.</p>
+        </div>
+        <div class="card">
+          <h3>Research Assistant (Computer Vision), Germanium Solution</h3>
+          <p>December 2024 – May 2025</p>
+          <p>Assisted in the core research and development of an AI-based malaria detection framework, contributing across the entire scientific pipeline from raw microscopic data collection to preprocessing and feature extraction.</p>
+          <p>Led rigorous medical data curation and annotation workflows to construct high-quality datasets for training diagnostic deep learning models.</p>
+          <p>Conducted model experimentation and evaluation for medical image analysis to advance early-stage pathogen detection and automated diagnosis.</p>
+          <p>Deployed computer vision architectures into CCTV-based monitoring systems for real-time intelligent surveillance, crowd metrics, and edge anomaly detection.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="datasets">
+      <h2>Dataset Contributions</h2>
+      <div class="card">
+        <h3>Nigerian Currency (NAIRA) Classification Dataset</h3>
+        <p>A curated image dataset of Nigerian Naira banknotes captured under real-world conditions using mobile devices. The dataset includes seven denominations (₦5–₦500) and is structured into training, validation, and testing splits for robust evaluation of image classification models.</p>
+        <p>This dataset supports research in currency recognition systems for automated financial processing, assistive technologies, and edge AI deployment in low-resource environments.</p>
+        <p>Link: <a href="https://www.kaggle.com/datasets/ismailismailtijjani/naira-nigerian-currency-dataset" target="_blank" rel="noreferrer">https://www.kaggle.com/datasets/ismailismailtijjani/naira-nigerian-currency-dataset</a></p>
+      </div>
+      <div class="card">
+        <h3>Nigerian Tricycle (KEKE NAPEP) Detection Dataset</h3>
+        <p>A YOLO-formatted object detection dataset containing images of commercial tricycles collected across urban environments in Kano State, Nigeria. The dataset includes diverse real-world conditions such as traffic congestion, varying lighting, and multiple viewpoints.</p>
+        <p>It is designed for object detection and tracking tasks in intelligent transportation systems, urban mobility analytics, and traffic monitoring applications.</p>
+        <p>Link: <a href="https://www.kaggle.com/datasets/ismailismailtijjani/keke-napep-tricycle-dataset" target="_blank" rel="noreferrer">https://www.kaggle.com/datasets/ismailismailtijjani/keke-napep-tricycle-dataset</a></p>
+      </div>
+      <div class="card">
+        <h3>Sesame Plant Segmentation Dataset</h3>
+        <p>A pixel-level annotated agricultural dataset focused on sesame plant segmentation in real farm environments. The dataset captures multiple growth stages, lighting conditions, and field perspectives, enabling precise instance segmentation for agricultural AI systems.</p>
+        <p>It supports applications in crop monitoring, yield estimation, and automated agricultural intervention systems.</p>
+        <p>Link: <a href="https://www.kaggle.com/datasets/ismailismailtijjani/sesame-plant-detection-dataset" target="_blank" rel="noreferrer">https://www.kaggle.com/datasets/ismailismailtijjani/sesame-plant-detection-dataset</a></p>
+      </div>
+      <div class="card">
+        <h3>AgriAISeg Multicrop Segmentation Dataset</h3>
+        <p>A large-scale agricultural image dataset designed for pixel-level segmentation of multiple crop types, including tomato, cabbage, and sesame. The dataset is structured for deep learning-based segmentation tasks and supports scalable training for agricultural vision systems.</p>
+        <p>It is intended for research in precision agriculture, automated farming systems, and plant-level monitoring.</p>
+        <p>Link: <a href="https://www.kaggle.com/datasets/ismailismailtijjani/agriaiseg" target="_blank" rel="noreferrer">https://www.kaggle.com/datasets/ismailismailtijjani/agriaiseg</a></p>
+      </div>
+      <div class="card">
+        <h3>Oil & Gas Production Monitoring Dataset</h3>
+        <p>A structured tabular dataset containing surface and subsurface production parameters from oil wells. It includes variables such as pressure, temperature, flow characteristics, and production outputs (Water Cut and BS&W).</p>
+        <p>This dataset supports machine learning applications in production forecasting, reservoir analysis, and energy systems optimization.</p>
+        <p>Link: <a href="https://www.kaggle.com/datasets/sgobir/production-dataset" target="_blank" rel="noreferrer">https://www.kaggle.com/datasets/sgobir/production-dataset</a></p>
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <h2>Projects</h2>
+      <div class="card">
+        <h3>Food Vision</h3>
+        <p>An end-to-end multimodal computer vision application that detects Nigerian dishes in real time using Roboflow and integrates Google’s Gemini AI to generate customized nutritional insights and health benefits. Deployed via a Hugging Face space, the interactive Gradio interface includes a text-to-speech module to read dietary recommendations aloud for enhanced user accessibility.</p>
+        <p>Video Demo: <a href="https://youtu.be/WsCxMQOw78I?si=5SDpxRre045zTSj-" target="_blank" rel="noreferrer">https://youtu.be/WsCxMQOw78I?si=5SDpxRre045zTSj-</a></p>
+        <p>Website Demo: <a href="https://huggingface.co/spaces/esssyjr/FOOD" target="_blank" rel="noreferrer">https://huggingface.co/spaces/esssyjr/FOOD</a></p>
+        <p>GitHub Page: <a href="https://github.com/esssyjr/Food-Vision" target="_blank" rel="noreferrer">https://github.com/esssyjr/Food-Vision</a></p>
+      </div>
+      <div class="card">
+        <h3>Halal View</h3>
+        <p>An AI-powered automated video content moderation pipeline engineered to identify specified visual contexts in media streams and apply precise, dynamic Gaussian blurring. Designed to safeguard viewer preferences and maintain cultural compliance, this system provides a scalable solution for television networks, digital broadcasting, and parental control applications.</p>
+        <p>Video Demo: <a href="https://youtu.be/_1HlX8Evazo?si=TELF7BqYAT9p9k9j" target="_blank" rel="noreferrer">https://youtu.be/_1HlX8Evazo?si=TELF7BqYAT9p9k9j</a></p>
+        <p>GitHub Page: <a href="https://github.com/esssyjr/MPOX_DETECTION" target="_blank" rel="noreferrer">https://github.com/esssyjr/MPOX_DETECTION</a></p>
+      </div>
+      <div class="card">
+        <h3>Keke Napep Detection and Tracking System</h3>
+        <p>A high-throughput computer vision pipeline engineered to detect, segment, and track commercial tricycles (Keke Napep) across real-world urban video feeds. Tailored to address the specific layout of Nigerian transit ecosystems, the system outputs precise localization and count data to optimize municipal fleet management, toll automation, and traffic flow analytics.</p>
+        <p>GitHub Page: <a href="https://github.com/esssyjr/KEKE_NAPEP_DETECTION_AND_TRACKING_SYSTEM" target="_blank" rel="noreferrer">https://github.com/esssyjr/KEKE_NAPEP_DETECTION_AND_TRACKING_SYSTEM</a></p>
+        <p>Video Demo 1: <a href="https://youtu.be/sZ4QVAU8XIg?si=vBMNiVAFNJgGR16n" target="_blank" rel="noreferrer">https://youtu.be/sZ4QVAU8XIg?si=vBMNiVAFNJgGR16n</a></p>
+        <p>Video Demo 2: <a href="https://youtu.be/UOqrPQgLDT8?si=hdb-toFdPTlIlgwO" target="_blank" rel="noreferrer">https://youtu.be/UOqrPQgLDT8?si=hdb-toFdPTlIlgwO</a></p>
+        <p>Website Demo: <a href="https://huggingface.co/spaces/esssyjr/KEKE_NAPEP_DETECTION" target="_blank" rel="noreferrer">https://huggingface.co/spaces/esssyjr/KEKE_NAPEP_DETECTION</a></p>
+      </div>
+      <div class="card">
+        <h3>Sports Image Classification System</h3>
+        <p>An image recognition framework utilizing MobileNetV2 transfer learning to perform highly efficient classification across one hundred distinct sports categories. By exploiting pre-trained convolutional feature maps, the model minimizes computational overhead while maintaining high accuracy, making it ideal for mobile apps and low-power devices.</p>
+        <p>GitHub Page: <a href="https://github.com/esssyjr/SPORTS_CLASSIFICATION" target="_blank" rel="noreferrer">https://github.com/esssyjr/SPORTS_CLASSIFICATION</a></p>
+      </div>
+      <div class="card">
+        <h3>Surface Crack Classifier</h3>
+        <p>A structural health monitoring model designed to classify infrastructural surfaces into binary states of integrity based on the presence of structural fractures. Engineered to automate routine physical inspections, this model helps flag critical defects early across concrete roads, facility walls, and public bridge structures.</p>
+        <p>GitHub Page: <a href="https://github.com/esssyjr/SURFACE_CRACK_CLASSIFICATIONS" target="_blank" rel="noreferrer">https://github.com/esssyjr/SURFACE_CRACK_CLASSIFICATIONS</a></p>
+      </div>
+      <div class="card">
+        <h3>6-Places Scene Classifier</h3>
+        <p>A deep neural network trained to execute environmental scene categorization, identifying images across distinct topographical classes including buildings, forests, glaciers, mountains, seas, and streets. The system provides foundational spatial context layers useful for geoguessr engines, map organization tools, and autonomous vehicle navigation.</p>
+        <p>GitHub Page: <a href="https://github.com/esssyjr/6-PLACES-CLASSIFICATION" target="_blank" rel="noreferrer">https://github.com/esssyjr/6-PLACES-CLASSIFICATION</a></p>
+      </div>
+      <div class="card">
+        <h3>4-Animals Classifier</h3>
+        <p>A lightweight convolutional neural network built as a comparative exploration of model scaling, designed to classify image vectors of cats, dogs, elephants, and giraffes. The codebase showcases optimization techniques, pipeline configurations, and data augmentation practices used to stabilize training accuracy with localized datasets.</p>
+        <p>GitHub Page: <a href="https://github.com/esssyjr/4-Animals-Classification" target="_blank" rel="noreferrer">https://github.com/esssyjr/4-Animals-Classification</a></p>
+      </div>
+      <div class="card">
+        <h3>Predictive Model for Consumer Behavior</h3>
+        <p>A machine learning exploration modeling consumer purchasing actions through a comparative analysis of Decision Trees, Logistic Regression, and simple feedforward Artificial Neural Networks. The repository outlines complete structured data preprocessing workflows, multi-feature correlation analysis, and comparative classification evaluation metrics.</p>
+        <p>GitHub Page: <a href="https://github.com/esssyjr/Binary-Classification-Bike-Buyer" target="_blank" rel="noreferrer">https://github.com/esssyjr/Binary-Classification-Bike-Buyer</a></p>
+      </div>
+      <div class="card">
+        <h3>Multi-Class Dry Bean Classifier</h3>
+        <p>A dense feedforward neural network optimized to categorize agricultural varieties of dry beans based on geometric, morphological, and structural features extracted from seed imagery. The pipeline focuses heavily on feature scaling and engineering to resolve high-overlap classification challenges across related biological strains.</p>
+        <p>GitHub Page: <a href="https://github.com/esssyjr/Multi-class-Classification-of-Dry-Beanss" target="_blank" rel="noreferrer">https://github.com/esssyjr/Multi-class-Classification-of-Dry-Beanss</a></p>
+      </div>
+      <div class="card">
+        <h3>DCARS: Automated Diagnostic Center Reception</h3>
+        <p>An intelligent, production-oriented automation system designed to streamline patient intake and data flows within medical diagnostic facilities. The software provides a structured solution to optimize patient records management, queue scheduling, and internal front-desk coordination to eliminate operational administrative bottlenecks.</p>
+        <p>GitHub Page: <a href="https://github.com/esssyjr/DCARS" target="_blank" rel="noreferrer">https://github.com/esssyjr/DCARS</a></p>
+      </div>
+    </section>
+
+    <section class="section" id="articles">
+      <h2>Articles</h2>
+      <div class="card">
+        <h3>Day 4: Adding Human-in-the-Loop Annotation to the MLOps Pipeline</h3>
+        <p>Concludes the MLOps pipeline series by establishing a Human-in-the-Loop (HITL) microservice to catch edge-case misclassifications and eliminate silent model degradation. It outlines an asynchronous feedback loop using shared Docker volumes where human-corrected data is systematically structured and automatically fed back into Airflow retraining cycles.</p>
+        <p>Link: <a href="https://medium.com/@ismailismailtj/day-4-adding-human-in-the-loop-annotation-to-the-mlops-pipeline-6da85777049e" target="_blank" rel="noreferrer">https://medium.com/@ismailismailtj/day-4-adding-human-in-the-loop-annotation-to-the-mlops-pipeline-6da85777049e</a></p>
+      </div>
+      <div class="card">
+        <h3>Day 3: Deploying Containerized ML Services with Docker, FastAPI, Streamlit, Airflow & MLflow</h3>
+        <p>Demonstrates how to containerize and orchestrate a multi-service production pipeline using Docker and Docker Compose to eliminate environment mismatches. It breaks down thread-safe, lazy model loading in FastAPI via MLflow registry aliases alongside an interactive Streamlit frontend to achieve seamless, zero-downtime model updates.</p>
+        <p>Link: <a href="https://medium.com/@ismailismailtj/day-3-deploying-containerized-ml-services-with-docker-fastapi-streamlit-airflow-mlflow-6584b9b4d98b" target="_blank" rel="noreferrer">https://medium.com/@ismailismailtj/day-3-deploying-containerized-ml-services-with-docker-fastapi-streamlit-airflow-mlflow-6584b9b4d98b</a></p>
+      </div>
+      <div class="card">
+        <h3>Day 2: Orchestrating Production ML Model Retraining with Apache Airflow</h3>
+        <p>Focuses on mitigating production model degradation due to data drift by automating daily retraining pipelines with Apache Airflow. The piece details DAG architecture, PythonOperator task dependencies, and robust error-handling mechanisms designed to keep production models accurate without manual intervention.</p>
+        <p>Link: <a href="https://medium.com/@ismailismailtj/day-2-orchestrating-production-ml-model-retraining-with-apache-airflow-06de179a0913" target="_blank" rel="noreferrer">https://medium.com/@ismailismailtj/day-2-orchestrating-production-ml-model-retraining-with-apache-airflow-06de179a0913</a></p>
+      </div>
+      <div class="card">
+        <h3>Day 1: Model Experimentation with MLflow</h3>
+        <p>The first installment of an end-to-end MLOps series detailing the technical implementation of MLflow to eliminate ad-hoc, unorganized machine learning workflows. It provides an architectural walkthrough of centralized tracking servers, backend metadata storage, and automated TensorFlow logging to ensure complete experiment reproducibility.</p>
+        <p>Link: <a href="https://medium.com/@ismailismailtj/day-1-model-experimentation-with-mlflow-711584f28195" target="_blank" rel="noreferrer">https://medium.com/@ismailismailtj/day-1-model-experimentation-with-mlflow-711584f28195</a></p>
+      </div>
+      <div class="card">
+        <h3>Day 0: Building a Real End-to-End MLOps Pipeline</h3>
+        <p>Serves as the foundational primer for an incremental MLOps series, addressing the industry-wide challenge of machine learning models failing to transition from static Jupyter notebooks to active production environments. It introduces the architectural blueprint and operational roadmap for a reliable, living system powered by an industry-grade technology stack. Utilizing a real-world Nigerian currency dataset, the article outlines the design requirements for automated data ingestion, human-in-the-loop validation, automated retraining, and zero-downtime deployment.</p>
+        <p>Link: <a href="https://medium.com/@ismailismailtj/day-0-building-a-real-end-to-end-mlops-pipeline-9c6aa5ed4df6" target="_blank" rel="noreferrer">https://medium.com/@ismailismailtj/day-0-building-a-real-end-to-end-mlops-pipeline-9c6aa5ed4df6</a></p>
+      </div>
+      <div class="card">
+        <h3>AI Education: The True Engine of Development</h3>
+        <p>Explores the critical role of technical mentorship and foundational AI education in shifting users from passive consumers to proactive creators. Based on outreach experiences with EJAZTECH.AI, it advocates for demystifying technology to transform industry fear into practical, localized innovation.</p>
+        <p>Link: <a href="https://medium.com/@ismailismailtj/ai-education-the-true-engine-of-development-627ad2698ea3" target="_blank" rel="noreferrer">https://medium.com/@ismailismailtj/ai-education-the-true-engine-of-development-627ad2698ea3</a></p>
+      </div>
+      <div class="card">
+        <h3>AI Needs a Body — And Mechatronics Provides It</h3>
+        <p>Argues that the next frontier of artificial intelligence will unfold in the physical world where software must interact with reality. It highlights Mechatronics Engineering as the essential hardware foundation—providing the sensors, actuators, and control systems that serve as the physical body for AI brains to see, predict, and act.</p>
+        <p>Link: <a href="https://medium.com/@ismailismailtj/ai-needs-a-body-and-mechatronics-provides-it-c606b6d191a3" target="_blank" rel="noreferrer">https://medium.com/@ismailismailtj/ai-needs-a-body-and-mechatronics-provides-it-c606b6d191a3</a></p>
+      </div>
+      <div class="card">
+        <h3>Integrating Gemini, Roboflow, Gradio, and Hugging Face to Build AI-Powered Systems</h3>
+        <p>A technical guide demonstrating how to build a localized, multimodal "Food Vision" system. The article details end-to-end integration of Roboflow for object detection, Google’s Gemini for tailored nutritional insights, and Hugging Face and Gradio for deploying an interactive web interface complete with audio output.</p>
+        <p>Link: <a href="https://medium.com/@ismailismailtj/integrating-gemini-roboflow-gradio-and-hugging-face-to-build-ai-powered-systems-887f4d91f60b" target="_blank" rel="noreferrer">https://medium.com/@ismailismailtj/integrating-gemini-roboflow-gradio-and-hugging-face-to-build-ai-powered-systems-887f4d91f60b</a></p>
+      </div>
+      <div class="card">
+        <h3>Building Africa’s AI Future Starts with Data Collection: A Call to Action</h3>
+        <p>An analysis of why the African continent risks lagging behind in the global AI revolution due to a critical deficit in localized, digitized data collection. It argues against the ineffective copy-pasting of Western AI models, emphasizing that impactful solutions must be built from the ground up using infrastructure-specific, regional data.</p>
+        <p>Link: <a href="https://medium.com/@ismailismailtj/building-africas-ai-future-starts-with-data-collection-a-call-to-action-645d2438aee5" target="_blank" rel="noreferrer">https://medium.com/@ismailismailtj/building-africas-ai-future-starts-with-data-collection-a-call-to-action-645d2438aee5</a></p>
+      </div>
+      <div class="card">
+        <h3>AI Beyond Coding: A Data-Centric Paradigm</h3>
+        <p>A deep dive into why code accounts for only about 30 percent of the machine learning pipeline, shifting the focus toward Andrew Ng’s data-centric AI philosophy. The piece breaks down project scoping, rigorous data preprocessing, model deployment, and MLOps, proving that high-quality, diverse datasets outperform minor architecture tweaking.</p>
+        <p>Link: <a href="https://medium.com/@ismailismailtj/ai-beyond-coding-a-data-centric-paradigm-7f4577748c5a" target="_blank" rel="noreferrer">https://medium.com/@ismailismailtj/ai-beyond-coding-a-data-centric-paradigm-7f4577748c5a</a></p>
+      </div>
+      <div class="card">
+        <h3>Path to Artificial General Intelligence (AGI) 2</h3>
+        <p>A conceptual critique of the term "Artificial General Intelligence," advocating for the more precise framing of "Human-Level Intelligence." The article outlines the core cognitive architectures required for true machine autonomy—specifically learning, memory, reasoning, and planning—while emphasizing a gradual, collaborative framework.</p>
+        <p>Link: <a href="https://medium.com/@ismailismailtj/path-to-artificial-general-intelligence-agi-2-6c5051af0baf" target="_blank" rel="noreferrer">https://medium.com/@ismailismailtj/path-to-artificial-general-intelligence-agi-2-6c5051af0baf</a></p>
+      </div>
+      <div class="card">
+        <h3>How Students Will Use ChatGPT Effectively</h3>
+        <p>A practical guide for students navigating generative AI tools in academia. It explores how to leverage large language models for rapid summarization, research synthesis, and ideation, while strictly outlining strategies for rigorous fact-checking, bias mitigation, and maintaining academic integrity.</p>
+        <p>Link: <a href="https://medium.com/@ismailismailtj/how-students-will-use-chatgpt-effectively-1d7f57d7e722" target="_blank" rel="noreferrer">https://medium.com/@ismailismailtj/how-students-will-use-chatgpt-effectively-1d7f57d7e722</a></p>
+      </div>
+      <div class="card">
+        <h3>Understanding How ChatGPT Works and Addressing Raised Concerns</h3>
+        <p>A technical breakdown of transformer architectures and language model mechanics simplified for a broader audience. The article demystifies how probabilistic text generation works while addressing common societal anxieties surrounding AI hallucination, training data ethics, and privacy.</p>
+        <p>Link: <a href="https://medium.com/@ismailismailtj/understanding-how-chatgpt-works-and-addressing-raised-concerns-09f7835d17c0" target="_blank" rel="noreferrer">https://medium.com/@ismailismailtj/understanding-how-chatgpt-works-and-addressing-raised-concerns-09f7835d17c0</a></p>
+      </div>
+      <div class="card">
+        <h3>Path to Artificial General Intelligence (AGI 1)</h3>
+        <p>The foundational installment examining the milestone markers, historical context, and technical evolutionary steps required for machine learning systems to transition from narrow tasks toward generalized problem-solving capabilities.</p>
+        <p>Link: <a href="https://medium.com/@ismailismailtj/path-to-artificial-general-intelligence-agi-1-c07208b13020" target="_blank" rel="noreferrer">https://medium.com/@ismailismailtj/path-to-artificial-general-intelligence-agi-1-c07208b13020</a></p>
+      </div>
+      <div class="card">
+        <h3>AI and the Future of Jobs</h3>
+        <p>An economic and technical analysis of automation’s impact on the global workforce. The piece separates media hype from reality, discussing job displacement, the emergence of the prompt engineering and data curation economy, and the necessity of rapid upskilling.</p>
+        <p>Link: <a href="https://medium.com/@ismailismailtj/ai-and-future-of-jobs-a831e9bdc494" target="_blank" rel="noreferrer">https://medium.com/@ismailismailtj/ai-and-future-of-jobs-a831e9bdc494</a></p>
+      </div>
+      <div class="card">
+        <h3>AI is Here for Good</h3>
+        <p>An optimistic, evidence-based perspective on the positive societal impacts of artificial intelligence, highlighting its capacity to democratize healthcare, optimize agricultural yields, and streamline civic infrastructure when developed ethically.</p>
+        <p>Link: <a href="https://medium.com/@ismailismailtj/ai-is-here-for-good-bcdb47d6cebe" target="_blank" rel="noreferrer">https://medium.com/@ismailismailtj/ai-is-here-for-good-bcdb47d6cebe</a></p>
+      </div>
+    </section>
+
+    <section class="section" id="skills">
+      <h2>Technical skills</h2>
+      <div class="section-columns">
+        <div class="card">
+          <h3>Computer Vision</h3>
+          <p>Object Detection, Instance Segmentation, Optical Character Recognition (OCR), Image Classification, Video Analysis</p>
+        </div>
+        <div class="card">
+          <h3>Machine Learning & AI</h3>
+          <p>Deep Learning, Data-Efficient Learning, Transfer Learning, Model Evaluation, Multimodal Learning</p>
+        </div>
+        <div class="card">
+          <h3>Intelligent & Embedded Systems</h3>
+          <p>Edge AI Deployment, Embedded AI Systems, Real-Time Inference Pipelines, Camera-Based Vision Systems, Sensor Integration, Microcontroller-Based Control Systems</p>
+        </div>
+        <div class="card">
+          <h3>MLOps & Deployment</h3>
+          <p>Model Deployment, API Development, Docker, FastAPI, Experiment Tracking (MLflow, Airflow)</p>
+        </div>
+        <div class="card">
+          <h3>Programming & Tools</h3>
+          <p>Python, PyTorch, TensorFlow, OpenCV, Git, Linux</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="leadership">
+      <h2>Leadership & Impact</h2>
+      <div class="card">
+        <h3>AI Mentorship Program — From Zero to Hero</h3>
+        <p>Founded and led a structured AI mentorship initiative focused on guiding beginners from foundational concepts to practical AI development. The program is currently running its fourth cohort and has supported students through hands-on learning, project development, and technical mentorship.</p>
+      </div>
+      <div class="card">
+        <h3>AI Awareness Outreach</h3>
+        <p>Organize outreach sessions for secondary school students focused on responsible, ethical, and productive use of artificial intelligence technologies.</p>
+      </div>
+      <div class="card">
+        <h3>Monthly AI Awareness Webinars</h3>
+        <p>Host monthly public webinars designed to help non-technical audiences understand practical applications of AI and emerging technological trends.</p>
+      </div>
+      <div class="card">
+        <h3>Python & Machine Learning Workshops</h3>
+        <p>Conduct practical workshops introducing programming, machine learning, and AI fundamentals to young learners, particularly individuals between the ages of 16–20.</p>
+      </div>
+      <div class="card">
+        <h3>Teacher Capacity Building Program</h3>
+        <p>Train educators on integrating AI tools into teaching and learning environments while promoting responsible and ethical AI usage in classrooms.</p>
+      </div>
+    </section>
+
+    <section class="section" id="awards">
+      <h2>Awards and Recognition</h2>
+      <ul class="link-list">
+        <li>Finalist, Student Venture Capital Grant Program (2026)</li>
+        <li>1st Runner-Up (Poster Award), Data Science Nigeria (DSN) AI Bootcamp (2025)</li>
+        <li>Second Place, Valerie Agberagba Young Engineers AI Innovation Challenge (2025)</li>
+        <li>3rd Place, Nigerian National AI Hackathon (Northwest Region) (2025)</li>
+        <li>Top 5 Finalist, Deep Learning Indaba (DLI) Community Challenges (2025)</li>
+        <li>Top 1%, FCMB Agritech Hackathon & Venture Building Program (2024)</li>
+        <li>Top 10 Finalist, Nigerian Society of Engineers (NSE) Young Engineer of the Year (2024)</li>
+        <li>Top 20 Finalist, Agri Innovators Hackathon (2024)</li>
+        <li>AI Innovation Recognition Award, GOTECH Dubai (2024)</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    © 2026 ISMAIL ISMAIL TIJJANI · Hosted on GitHub Pages
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const sections = document.querySelectorAll('.section');
+      const navLinks = document.querySelectorAll('.nav-links a');
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, { threshold: 0.15 });
+
+      sections.forEach(section => observer.observe(section));
+
+      const sectionMap = Array.from(sections).map(section => ({
+        id: section.id,
+        top: section.offsetTop
+      }));
+
+      window.addEventListener('scroll', () => {
+        const scrollPos = window.scrollY + window.innerHeight * 0.18;
+        sectionMap.forEach(({ id }) => {
+          const section = document.getElementById(id);
+          if (!section) return;
+          if (scrollPos >= section.offsetTop && scrollPos < section.offsetTop + section.offsetHeight) {
+            navLinks.forEach(link => link.classList.toggle('active', link.getAttribute('href') === `#${id}`));
+          }
+        });
+      });
+
+      document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', (event) => {
+          event.preventDefault();
+          const target = document.querySelector(link.getAttribute('href'));
+          if (target) {
+            window.scrollTo({ top: target.offsetTop - 14, behavior: 'smooth' });
+          }
+        });
+      });
+    });
+  </script>
 </body>
-</html> 
+</html>
