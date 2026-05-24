@@ -86,9 +86,9 @@
     .hero {
       position: relative;
       display: grid;
-      grid-template-columns: 1fr;
-      gap: 32px;
-      align-items: start;
+      grid-template-columns: minmax(280px, 380px) minmax(0, 1fr);
+      gap: 42px;
+      align-items: center;
       padding: 52px 0 24px;
     }
     .hero::before {
@@ -347,13 +347,13 @@
 
   <main class="container">
     <section class="hero section visible" id="home">
+      <aside class="hero-panel">
+        <img class="hero-photo" src="photo.jpg" alt="ISMAIL ISMAIL TIJJANI" />
+      </aside>
       <div class="hero-content">
         <h1>ISMAIL ISMAIL TIJJANI</h1>
         <p class="lead">Mechatronics Engineering Graduate | Applied Computer Vision Researcher | MLOps Practitioner</p>
       </div>
-      <aside class="hero-panel">
-        <img class="hero-photo" src="photo.jpg" alt="ISMAIL ISMAIL TIJJANI" />
-      </aside>
     </section>
 
     <section class="section" id="contact">
