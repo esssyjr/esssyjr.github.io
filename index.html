@@ -86,7 +86,7 @@
     .hero {
       position: relative;
       display: grid;
-      grid-template-columns: minmax(0, 1.4fr) minmax(300px, 1fr);
+      grid-template-columns: 1fr;
       gap: 32px;
       align-items: start;
       padding: 52px 0 24px;
@@ -141,14 +141,15 @@
       box-shadow: 0 30px 60px rgba(15, 23, 42, 0.09);
     }
     .hero-photo {
-      width: 120px;
-      height: 120px;
+      width: min(320px, 100%);
+      height: auto;
+      aspect-ratio: 1 / 1;
       border-radius: 34px;
       object-fit: cover;
       border: 3px solid rgba(59, 130, 246, 0.16);
       box-shadow: 0 18px 40px rgba(15, 23, 42, 0.12);
       display: block;
-      margin-bottom: 24px;
+      margin: 0 auto 24px;
     }
     .hero-panel h3 {
       margin: 0 0 18px;
@@ -288,6 +289,24 @@
       transform: translateY(-1px);
       background: var(--accent-soft);
     }
+    .link-button {
+      border: none;
+      padding: 10px 18px;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #ffffff;
+      cursor: pointer;
+      font-weight: 700;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+    .link-button:hover {
+      transform: translateY(-1px);
+      background: var(--accent-soft);
+    }
     footer {
       text-align: center;
       margin: 56px auto 24px;
@@ -329,14 +348,8 @@
   <main class="container">
     <section class="hero section visible" id="home">
       <div class="hero-content">
-        <div class="label">Mechatronics | Computer Vision | MLOps</div>
         <h1>ISMAIL ISMAIL TIJJANI</h1>
         <p class="lead">Mechatronics Engineering Graduate | Applied Computer Vision Researcher | MLOps Practitioner</p>
-        <div class="hero-meta">
-          <span class="badge">Researcher</span>
-          <span class="badge">AI Practitioner</span>
-          <span class="badge">Deployment-Aware Systems</span>
-        </div>
       </div>
       <aside class="hero-panel">
         <img class="hero-photo" src="photo.jpg" alt="ISMAIL ISMAIL TIJJANI" />
@@ -764,6 +777,11 @@
             navLinks.forEach(link => link.classList.toggle('active', link.getAttribute('href') === `#${id}`));
           }
         });
+      });
+
+      document.querySelectorAll('main a').forEach(link => {
+        link.classList.add('link-button');
+        link.textContent = 'Link';
       });
 
       document.querySelectorAll('.nav-links a').forEach(link => {
