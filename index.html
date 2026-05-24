@@ -289,6 +289,19 @@
       transform: translateY(-1px);
       background: var(--accent-soft);
     }
+    .social-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 26px;
+    }
+    .social-buttons button {
+      min-width: 104px;
+    }
+    .action-button:hover {
+      transform: translateY(-1px);
+      background: var(--accent-soft);
+    }
     .link-button {
       border: none;
       padding: 10px 18px;
@@ -353,29 +366,12 @@
       <div class="hero-content">
         <h1>ISMAIL ISMAIL TIJJANI</h1>
         <p class="lead">Mechatronics Engineering Graduate | Applied Computer Vision Researcher | MLOps Practitioner</p>
-      </div>
-    </section>
-
-    <section class="section" id="contact">
-      <h2>Contact</h2>
-      <p>I am open to research collaborations, academic opportunities, and applied AI projects in computer vision, intelligent systems, and data-centric machine learning. Feel free to reach out for discussions on research, partnerships, or technical inquiries.</p>
-      <div class="link-list">
-        <li>
-          <span>Email:</span>
-          <button class="action-button" onclick="location.href='mailto:ismailismailtj@gmail.com'">Email Me</button>
-        </li>
-        <li>
-          <span>LinkedIn:</span>
+        <div class="social-buttons">
+          <button class="action-button" onclick="location.href='mailto:ismailismailtj@gmail.com'">Email</button>
           <button class="action-button" onclick="window.open('https://www.linkedin.com/in/ismail-tijjani-31a41b1aa', '_blank')">LinkedIn</button>
-        </li>
-        <li>
-          <span>X:</span>
           <button class="action-button" onclick="window.open('https://x.com/esssyjr', '_blank')">X</button>
-        </li>
-        <li>
-          <span>GitHub:</span>
           <button class="action-button" onclick="window.open('https://github.com/esssyjr', '_blank')">GitHub</button>
-        </li>
+        </div>
       </div>
     </section>
 
